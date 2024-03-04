@@ -12,8 +12,8 @@
       font-family: 'Nunito Sans', sans-serif;
     }
     header {
-      background-color: #D2042D; /* Updated red color */
-      color: #FFFFFF; /* White text */
+      background-color: #D2042D;
+      color: #FFFFFF;
       padding: 10px;
       text-align: center;
       position: fixed;
@@ -22,13 +22,26 @@
       z-index: 1000;
     }
     header a {
-      color: #FFFFFF; /* White text for links */
-      text-decoration: none; /* Remove underline */
-      margin: 0 10px; /* Add some spacing between links */
+      color: #FFFFFF;
+      text-decoration: none;
+      margin: 0 10px;
     }
     section {
       padding: 20px;
-      margin-top: 60px; /* Adjust this margin to account for the fixed header */
+      margin-top: 60px;
+    }
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .about-text {
+      max-width: 60%; /* Adjust the width of the text */
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%; /* Add a border radius for a circular image */
     }
   </style>
 </head>
@@ -43,23 +56,15 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <!-- Add your about me content here -->
+    <div class="about-content">
+      <img src="https://github.com/aguilarlleyda/aguilarlleyda.github.io/raw/main/images/about_pic.jpg" alt="Your Name" width="400" height="400">
+      <div class="about-text">
+        <p>This is a placeholder for your about me text. Feel free to replace it with your actual information, such as your background, interests, and goals.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <!-- Add your skills content here -->
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <!-- Add your projects content here -->
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <!-- Add your contact information and form here -->
-  </section>
+  <!-- Other sections... -->
 
 </body>
 </html>
