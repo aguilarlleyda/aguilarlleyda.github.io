@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,19 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Nunito Sans', sans-serif;
     }
+
+    .container {
+      padding: 0 140px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 10px;
+      }
+    }
+
     header {
       background-color: #D2042D;
       color: #FFFFFF;
@@ -24,185 +35,373 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    header .name {
+      text-align: left;
+    }
+
     header a {
       color: #FFFFFF;
       text-decoration: none;
       margin: 0 10px;
+      text-align: right;
     }
+
     section {
-      padding: 30px; /* Increased padding for wider margins */
-      margin-top: 60px;
-      background-color: #FFFFFF; /* alternative color: #f9f9f9 */
+      padding: 20px;
+      margin-top: 40px;
+      background-color: #FFFFFF;
       border-radius: 8px;
-      text-align: center; /* Center section titles */
+      text-align: center;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     section h2 {
-      margin-bottom: 20px; /* Add some space below the section titles */
+      margin-bottom: 20px;
     }
+
     .about-content {
       display: flex;
       align-items: center;
-      justify-content: space-around; /* Adjusted spacing for the About section */
-      flex-direction: row; /* Align items in a row */
+      justify-content: space-around;
+      flex-direction: row;
+      max-width: 100%;
     }
+
     .about-text {
       max-width: 60%;
-      text-align: justify; /* Justify the text in the About section */
-      position: relative; /* Position relative for absolute positioning of social icons */
+      text-align: justify;
+      position: relative;
     }
+
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 8px; /* Adjusted border radius for consistency */
+      border-radius: 8px;
     }
+
     .icons-socials {
       display: flex;
-      justify-content: center; /* Center the icons horizontally */
-      margin-top: 15px; /* Add space between the text and icons */
+      justify-content: center;
+      margin-top: 15px;
     }
+
     .icons-socials a {
       margin: 0 10px;
-      position: relative; /* Add relative positioning */
+      position: relative;
     }
+
     .icons-socials a:hover .social-icon {
-      content: url('./images/icon_github_hover.png'); /* Change the content on hover */
+      content: url('./images/icon_github_hover.png');
     }
+
     .icons-socials a img.social-icon {
-      transition: content 0.3s ease-in-out; /* Add transition for smooth effect */
-      max-width: 35px; /* Set max-width for the social icons */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 50%; /* Add border-radius for circular shape */
+      transition: content 0.3s ease-in-out;
+      max-width: 35px;
+      height: auto;
+      border-radius: 50%;
     }
+
     .icons-socials a:hover .linkedin-icon {
-      content: url('./images/icon_linkedin_hover.png'); /* Change the content on hover */
+      content: url('./images/icon_linkedin_hover.png');
     }
-    .linkedin-icon {
-      transition: content 0.3s ease-in-out; /* Add transition for smooth effect */
-    }
+
     .project {
       display: flex;
       align-items: center;
-      justify-content: space-around; /* Adjusted spacing for the Projects section */
-      flex-direction: row; /* Align items in a row */
+      justify-content: space-around;
+      flex-direction: row;
       margin-top: 20px;
     }
+
     .project img {
       max-width: 300px;
       height: auto;
       border-radius: 8px;
-      margin-right: 20px; /* Adjusted margin for better spacing */
+      margin-right: 20px;
     }
+
     .project-details {
       max-width: 60%;
       text-align: left;
     }
+
     .copyright {
       background-color: #D2042D;
       color: #FFFFFF;
-      padding: 15px;
+      padding: 5px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .resume-info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 30px 0;
+    }
+
+    .resume-entry {
+      width: 30%;
       text-align: center;
     }
+
+    .resume-arrow {
+      width: 30px;
+      height: auto;
+    }
+
+    .contact-form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .resume-entry p span {
+      color: #d2042d;
+    }
+
+    .resume-entry p strong {
+      font-weight: bold;
+    }
+
+    .resume-intro {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+
+    .skills-section {
+      padding: 30px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .skills-subheader {
+      text-align: left;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .skill-categories {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
+
+    .skill-category {
+      width: calc(33.3333% - 20px);
+      margin-bottom: 20px;
+      text-align: left;
+      margin: 0 10px;
+    }
+
+    .skill-category p {
+      color: #d2042d;
+      font-weight: bold;
+    }
   </style>
+
 </head>
+
 <body>
 
   <header>
     <span style="flex: 1;">David Aguilar Lleyda</span>
     <div style="flex: 1;">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#resume">Résumé</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="./images/about_pic.png" alt="Your Name" width="200" height="200">
-      <div class="about-text">
-        <p>Welcome to my website!<br> My name is David, and I’m in the data business. 
-            Before that,  I was a researcher in cognitive science for more than 10 years. I formed part of three different academic institutions in as many countries, and I <a href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en">co-authored many scientific articles</a>. 
-            During my time in academia I worked with data on a daily basis, developing <a href="#skills">a set of skills</a> that I showcase here as <a href="#projects">a series of projects</a>. 
-            Feel free to browse around, and <a href="#contact">contact me</a> if you wanna get in touch.</p>
-            <div class="icons-socials">
-                <a href="https://github.com/aguilarlleyda" target="_blank">
-                    <img src="./images/icon_github.png" alt="Github Icon" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/david-aguilar-lleyda-2a69532b1/" target="_blank">
-                    <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
-                </a>
-            </div>
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="./images/about_pic.png" alt="Your Name" width="200" height="200">
+        <div class="about-text">
+          <p>Welcome to my website!<br> My name is David, and I’m in the data business.
+            Before that, I was a researcher in cognitive science for more than 10 years. I formed part of three
+            different academic institutions in as many countries, and I <a
+              href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en">co-authored many scientific
+              articles</a>.
+            During my time in academia, I worked with data on a daily basis, developing <a href="#skills">a set of
+              skills</a> that I showcase here as <a href="#projects">a series of projects</a>. Feel free to browse
+            around, and <a href="#contact">contact me</a> if you wanna get in touch.</p>
+          <div class="icons-socials">
+            <a href="https://github.com/aguilarlleyda" target="_blank">
+              <img src="./images/icon_github.png" alt="Github Icon" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/david-aguilar-lleyda-2a69532b1/" target="_blank">
+              <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
+            </a>
+          </div>
         </div>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Add your skills content here.</p>
-  </section>
+    <section id="resume">
+        <h2>Résumé</h2>
+        <p class="resume-intro">Here you can find a summary of the positions I've held, 
+            as well as a list of some relevant skills I picked up along the way. You can also 
+            <a href="./resources/CV.pdf" download="CV.pdf">download a pdf version of my CV by clicking here</a>.
+        </p>
+      
+<!-- Experience Section -->
+<h3 style="color: black; text-align: left; margin-bottom: 0px; margin-top: 0px;">Experience</h3>
+<div class="resume-info" style="margin-bottom: 5px; display: flex; justify-content: center; align-items: flex-start; text-align: center;">
+  <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
+    <p style="margin: 0;">
+      <h4 style="color: #d2042d; display: inline; margin: 0;">2011 - 2017</h4><br>
+      <strong style="color: black; font-weight: bold;">PhD student</strong><br>
+      University of Barcelona<br>
+      <i>Barcelona, Catalonia</i>
+    </p>
+  </div>
+  <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
+    <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
+  </div>
+  <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
+    <p style="margin: 0;">
+      <h4 style="color: #d2042d; display: inline; margin: 0;">2018 - 2020</h4><br>
+      <strong style="color: black; font-weight: bold;">Postdoctoral Researcher</strong><br>
+      French National Centre<br>for Scientific Research<br>
+      <i>Paris, France</i>
+    </p>
+  </div>
+  <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
+    <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
+  </div>
+  <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
+    <p style="margin: 0;">
+      <h4 style="color: #d2042d; display: inline; margin: 0;">2020 - 2024</h4><br>
+      <strong style="color: black; font-weight: bold;">Research Scientist</strong><br>
+      RIKEN Center for Brain Science<br>
+      <i>Wako, Japan</i>
+    </p>
+  </div>
+</div>
+      
+<!-- Skills Section -->
+<h3 style="color: black; text-align: left; margin-bottom: 0px; margin-top: 0px;">Skills</h3>
+<div class="skills-section" style="max-width: 1200px; margin: 0px auto 20px; text-align: center;">
+  
+    <div class="skills-wrapper">
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Explore some of my projects below:</p>
-    <div class="project">
-      <img src="./images/project1.jpg" alt="Project 1">
-      <div class="project-details">
-        <h3>Project 1 Title</h3>
-        <p>Description for Project 1.</p>
-      </div>
+    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Domain knowledge</h4>
+      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+        <li>Data science, data analysis, statistics, data visualization, cognitive science</li>
+      </ul>
     </div>
-    <div class="project">
-      <img src="./images/project2.jpg" alt="Project 2">
-      <div class="project-details">
-        <h3>Project 2 Title</h3>
-        <p>Description for Project 2.</p>
-      </div>
-    </div>
-    <div class="project">
-      <img src="./images/project3.jpg" alt="Project 3">
-      <div class="project-details">
-        <h3>Project 3 Title</h3>
-        <p>Description for Project 3.</p>
-      </div>
-    </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you want to contact me, you can send me an email through the form below.</p>
-    <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST" style="max-width: 300px; margin: 0 auto;">
-      <div style="display: flex; flex-direction: column;">
-        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-          <label for="name" style="margin-right: 10px;">Your name:</label>
-          <input type="text" id="name" name="name" style="width: 100%;" required>
-        </div>
-  
-        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-          <label for="email" style="margin-right: 10px;">Your email:</label>
-          <input type="email" id="email" name="email" style="width: 100%;" required>
-        </div>
-  
-        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-          <label for="message" style="margin-right: 10px;">Message:</label>
-          <textarea id="message" name="message" style="width: 100%;" required></textarea>
-        </div>
-  
-        <div style="margin-bottom: 20px;">
-          <button type="submit" style="width: 100%; padding: 10px; font-size: inherit; background-color: black; color: white; transition: background-color 0.3s;">
-            Submit
-          </button>
+    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programming languages</h4>
+      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+        <li>Python, R, SQL, MATLAB, JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programs and tools</h4>
+      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+        <li>Tableau, Git, Microsoft Office, Affinity Designer</li>
+      </ul>
+    </div>
+
+    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Python libraries</h4>
+      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+        <li>Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Plotly </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>Explore some of my projects below:</p>
+      <div class="project">
+        <img src="./images/project1.jpg" alt="Project 1">
+        <div class="project-details">
+          <h3>Project 1 Title</h3>
+          <p>Description for Project 1.</p>
         </div>
       </div>
-    </form>
-  </section>
-  
+      <div class="project">
+        <img src="./images/project2.jpg" alt="Project 2">
+        <div class="project-details">
+          <h3>Project 2 Title</h3>
+          <p>Description for Project 2.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="./images/project3.jpg" alt="Project 3">
+        <div class="project-details">
+          <h3>Project 3 Title</h3>
+          <p>Description for Project 3.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you want to contact me, you can send me an email through the form below.</p>
+      <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST"
+        style="max-width: 300px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column;">
+          <div style="margin-bottom: 10px; display: flex; align-items: center;">
+            <label for="name" style="width: 80px; margin-right: 10px;">Your name:</label>
+            <input type="text" id="name" name="name" style="flex: 1;" required>
+          </div>
+
+          <div style="margin-bottom: 10px; display: flex; align-items: center;">
+            <label for="email" style="width: 80px; margin-right: 10px;">Your email:</label>
+            <input type="email" id="email" name="email" style="flex: 1;" required>
+          </div>
+
+          <div style="margin-bottom: 10px; display: flex; align-items: center;">
+            <label for="message" style="width: 80px; margin-right: 10px;">Message:</label>
+            <textarea id="message" name="message" style="flex: 1;" required></textarea>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <button type="submit"
+              style="width: 100%; padding: 10px; font-size: inherit; background-color: black; color: white; transition: background-color 0.3s;">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="copyright">
+    <p>Copyright &copy; David Aguilar Lleyda, 2024. All rights reserved.</p>
+  </div>
+
   <script>
-    document.querySelector("button").addEventListener("mouseover", function() {
+    document.querySelector("button").addEventListener("mouseover", function () {
       this.style.backgroundColor = "#d2042d";
     });
-  
-    document.querySelector("button").addEventListener("mouseout", function() {
+
+    document.querySelector("button").addEventListener("mouseout", function () {
       this.style.backgroundColor = "black";
     });
   </script>
+
+</body>
+
+</html>
