@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <!-- Global Styles -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name - Personal Site</title>
@@ -22,6 +23,53 @@
       }
     }
 
+    section {
+        padding-top: 80px;
+        margin-top: -80px; /* Combination of padding-top and margin-top to compensate for the fixed header height, allowing header shortcuts to direct to top of section */
+        padding-bottom: 0px;
+        margin-top: 30px;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    section h2 {
+      margin-top: 0px;
+      margin-bottom: 20px;
+      font-size: 40px;
+    }
+
+    .section-intro {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+
+    a {
+      color: #000000; /* Hyperlink */
+    }
+
+    a:hover {
+      color: #D2042D; /* Hyperlink hover */
+    }
+
+    .section-image {
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .section-image img {
+      width: 100px;
+      height: 100px;
+    }
+
+  </style>
+
+  <!-- Header Styles -->
+  <style>
     header {
       background-color: #D2042D;
       color: #FFFFFF;
@@ -47,19 +95,15 @@
       text-align: right;
     }
 
-    section {
-      padding: 20px;
-      margin-top: 40px;
-      background-color: #FFFFFF;
-      border-radius: 8px;
-      text-align: center;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+    header a:hover {
+      color: #000000;
     }
+  </style>
 
-    section h2 {
-      margin-bottom: 20px;
+  <!-- About Section Styles -->
+  <style>
+    #about {
+      padding-top: 80px; /* Adjust the value to create space between the header and About section */
     }
 
     .about-content {
@@ -76,10 +120,15 @@
       position: relative;
     }
 
-    img {
-      max-width: 100%;
+    .about-image {
+      max-width: 200px;
       height: auto;
       border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .about-image:hover {
+      transform: scale(1.1); /* Scale the image on hover */
     }
 
     .icons-socials {
@@ -107,42 +156,24 @@
     .icons-socials a:hover .linkedin-icon {
       content: url('./images/icon_linkedin_hover.png');
     }
+  </style>
 
-    .project {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-direction: row;
-      margin-top: 20px;
-    }
-
-    .project img {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-      margin-right: 20px;
-    }
-
-    .project-details {
-      max-width: 60%;
-      text-align: left;
-    }
-
-    .copyright {
-      background-color: #D2042D;
-      color: #FFFFFF;
-      padding: 5px;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
+  <!-- Resume Section Styles -->
+  <style>
     .resume-info {
       display: flex;
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
       padding: 30px 0;
+    }
+
+    .resume-subheader {
+      text-align: left;
+      color: #000000;
+      text-align: center; 
+      margin-top: 0px;
+      margin-bottom: 0px;
     }
 
     .resume-entry {
@@ -155,35 +186,15 @@
       height: auto;
     }
 
-    .contact-form {
-      max-width: 300px;
-      margin: 0 auto;
-    }
+  </style>
 
-    .resume-entry p span {
-      color: #d2042d;
-    }
-
-    .resume-entry p strong {
-      font-weight: bold;
-    }
-
-    .resume-intro {
-      max-width: 60%;
-      margin: 0 auto;
-    }
-
+  <!-- Skills Section Styles -->
+  <style>
     .skills-section {
-      padding: 30px;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .skills-subheader {
-      text-align: left;
-      color: #000000;
-      margin-bottom: 10px;
+     padding: 0px 30px 30px;
+     max-width: 100%;
+     margin-left: auto;
+     margin-right: auto;
     }
 
     .skill-categories {
@@ -206,6 +217,119 @@
     }
   </style>
 
+  <!-- Projects Section Styles -->
+  <style>
+    #projects {
+      text-align: center;
+    }
+  
+    .projects-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .project {
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+  width: 350px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio, covering the entire container */
+  object-position: center; /* Center the image within the container */
+  border-radius: 8px;
+}
+  
+    .project:hover .project-image {
+      filter: brightness(70%);
+    }
+  
+    .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio, covering the entire container */
+  border-radius: 8px;
+}
+  
+    .project-details {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: white; /* Set text color to white */
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  
+    .project-details h3 {
+      font-size: 14px; /* Adjust the font size as needed */
+      margin-bottom: 10px;
+    }
+  
+    .project:hover .project-details {
+      opacity: 1;
+    }
+  
+    .project-description-text {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .project-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .project-button:hover {
+    background-color: #d2042d;
+    color: white;
+  }
+  </style>
+  
+  
+  <!-- Contact Section Styles -->
+  <style>
+    .contact-form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .resume-entry p span {
+      color: #d2042d;
+    }
+
+    .resume-entry p strong {
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- Copyright Section Styles -->
+  <style>
+    .copyright {
+      background-color: #D2042D;
+      color: #FFFFFF;
+      padding: 5px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -221,17 +345,18 @@
   </header>
 
   <div class="container">
+    <!-- About Section -->
     <section id="about">
-      <h2>About Me</h2>
+      <!--  <h2>About Me</h2> -->
       <div class="about-content">
-        <img src="./images/about_pic.png" alt="Your Name" width="200" height="200">
+        <img src="./images/about_pic.png" alt="Your Name" width="200" height="200" id="aboutImage">
         <div class="about-text">
           <p>Welcome to my website!<br> My name is David, and I’m in the data business.
             Before that, I was a researcher in cognitive science for more than 10 years. I formed part of three
             different academic institutions in as many countries, and I <a
               href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en">co-authored many scientific
               articles</a>.
-            During my time in academia, I worked with data on a daily basis, developing <a href="#skills">a set of
+            During my time in academia I worked with data on a daily basis, developing <a href="#resume">a set of
               skills</a> that I showcase here as <a href="#projects">a series of projects</a>. Feel free to browse
             around, and <a href="#contact">contact me</a> if you wanna get in touch.</p>
           <div class="icons-socials">
@@ -246,119 +371,149 @@
       </div>
     </section>
 
-    <section id="resume">
-        <h2>Résumé</h2>
-        <p class="resume-intro">Here you can find a summary of the positions I've held, 
-            as well as a list of some relevant skills I picked up along the way. You can also 
-            <a href="./resources/CV.pdf" download="CV.pdf">download a pdf version of my CV by clicking here</a>.
-        </p>
-      
-<!-- Experience Section -->
-<h3 style="color: black; text-align: left; margin-bottom: 0px; margin-top: 0px;">Experience</h3>
-<div class="resume-info" style="margin-bottom: 5px; display: flex; justify-content: center; align-items: flex-start; text-align: center;">
-  <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
-    <p style="margin: 0;">
-      <h4 style="color: #d2042d; display: inline; margin: 0;">2011 - 2017</h4><br>
-      <strong style="color: black; font-weight: bold;">PhD student</strong><br>
-      University of Barcelona<br>
-      <i>Barcelona, Catalonia</i>
-    </p>
-  </div>
-  <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
-    <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
-  </div>
-  <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
-    <p style="margin: 0;">
-      <h4 style="color: #d2042d; display: inline; margin: 0;">2018 - 2020</h4><br>
-      <strong style="color: black; font-weight: bold;">Postdoctoral Researcher</strong><br>
-      French National Centre<br>for Scientific Research<br>
-      <i>Paris, France</i>
-    </p>
-  </div>
-  <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
-    <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
-  </div>
-  <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
-    <p style="margin: 0;">
-      <h4 style="color: #d2042d; display: inline; margin: 0;">2020 - 2024</h4><br>
-      <strong style="color: black; font-weight: bold;">Research Scientist</strong><br>
-      RIKEN Center for Brain Science<br>
-      <i>Wako, Japan</i>
-    </p>
-  </div>
-</div>
-      
-<!-- Skills Section -->
-<h3 style="color: black; text-align: left; margin-bottom: 0px; margin-top: 0px;">Skills</h3>
-<div class="skills-section" style="max-width: 1200px; margin: 0px auto 20px; text-align: center;">
+    <script>
+      // JavaScript to change the image source on hover
+      const aboutImage = document.getElementById("aboutImage");
+      aboutImage.addEventListener("mouseover", function () {
+        this.src = "./images/about_pic_hover.png"; 
+      });
   
-    <div class="skills-wrapper">
+      aboutImage.addEventListener("mouseout", function () {
+        this.src = "./images/about_pic.png";
+      });
+    </script>
 
-    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Domain knowledge</h4>
-      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-        <li>Data science, data analysis, statistics, data visualization, cognitive science</li>
-      </ul>
+    <!-- Resume Section -->
+    <section id="resume">
+      <div class="section-image">
+        <img src="./images/section_icon_resume.png" alt="Resume Icon" width="100" height="100">
+      </div>
+      <h2>Résumé</h2>
+      <div class="section-intro">
+      <p>Here you can find a summary of the positions I've held,
+        as well as a list of some relevant skills I picked up along the way. You can also
+        <a href="./resources/CV.pdf" download="CV.pdf">download a pdf version of my CV by clicking here</a>.
+      </p>
     </div>
 
-    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programming languages</h4>
-      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-        <li>Python, R, SQL, MATLAB, JavaScript</li>
-      </ul>
-    </div>
+      <!-- Experience Section -->
+      <h3 class=resume-subheader>Experience</h3>
+      <div class="resume-info"
+        style="margin-bottom: 5px; display: flex; justify-content: center; align-items: flex-start; text-align: center;">
+        <!-- Entry 1 -->
+        <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
+          <p style="margin: 0;">
+            <h4 style="color: #d2042d; display: inline; margin: 0;">2011 - 2017</h4><br>
+            <strong style="color: black; font-weight: bold;">PhD student</strong><br>
+            University of Barcelona<br>
+            <i>Barcelona, Catalonia</i>
+          </p>
+        </div>
+        <!-- Arrow 1 -->
+        <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
+          <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
+        </div>
+        <!-- Entry 2 -->
+        <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
+          <p style="margin: 0;">
+            <h4 style="color: #d2042d; display: inline; margin: 0;">2018 - 2020</h4><br>
+            <strong style="color: black; font-weight: bold;">Postdoctoral Researcher</strong><br>
+            French National Centre<br>for Scientific Research<br>
+            <i>Paris, France</i>
+          </p>
+        </div>
+        <!-- Arrow 2 -->
+        <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
+          <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
+        </div>
+        <!-- Entry 3 -->
+        <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
+          <p style="margin: 0;">
+            <h4 style="color: #d2042d; display: inline; margin: 0;">2020 - 2024</h4><br>
+            <strong style="color: black; font-weight: bold;">Research Scientist</strong><br>
+            RIKEN Center for Brain Science<br>
+            <i>Wako, Japan</i>
+          </p>
+        </div>
+      </div>
 
-    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programs and tools</h4>
-      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-        <li>Tableau, Git, Microsoft Office, Affinity Designer</li>
-      </ul>
-    </div>
+      <!-- Skills Section -->
+      <h3 class=resume-subheader>Skills</h3>
+      <div class="skills-section" style="max-width: 1200px; margin: 0px auto 0px; text-align: center;">
 
-    <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-      <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Python libraries</h4>
-      <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-        <li>Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Plotly </li>
-      </ul>
-    </div>
+        <div class="skills-wrapper">
+          <!-- Skill Category 1 -->
+          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Domain knowledge</h4>
+            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+              <li>Data science, data analysis, statistics, data visualization, cognitive science</li>
+            </ul>
+          </div>
+          <!-- Skill Category 2 -->
+          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programming languages</h4>
+            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+              <li>Python, R, SQL, MATLAB, JavaScript</li>
+            </ul>
+          </div>
+          <!-- Skill Category 3 -->
+          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programs and tools</h4>
+            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+              <li>Tableau, Git, Microsoft Office, Affinity Designer</li>
+            </ul>
+          </div>
+          <!-- Skill Category 4 -->
+          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
+            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Python libraries</h4>
+            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
+              <li>Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Plotly </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  </div>
-</div>
+    </section>
 
-
-
-
-
-
+    <!-- Projects Section -->
     <section id="projects">
+      <div class="section-image">
+        <img src="./images/section_icon_projects.png" alt="Projects Icon" width="100" height="100">
+      </div>
       <h2>Projects</h2>
-      <p>Explore some of my projects below:</p>
-      <div class="project">
-        <img src="./images/project1.jpg" alt="Project 1">
-        <div class="project-details">
-          <h3>Project 1 Title</h3>
-          <p>Description for Project 1.</p>
-        </div>
+      <div class="section-intro">
+      <p>What follows is a number of projects I developed to illustrate my use of different programming languages and software. 
+        As someone with a penchant for demographics, you'll see a lot of these projects deal with identifying differences in city and country datasets.</p>
+        <p>If what you want is a commented summary of my previous academic work, you can find it here.</p>
       </div>
-      <div class="project">
-        <img src="./images/project2.jpg" alt="Project 2">
-        <div class="project-details">
-          <h3>Project 2 Title</h3>
-          <p>Description for Project 2.</p>
+      </p>
+      <div class="projects-wrapper">
+        <div class="project">
+          <img src="./images/pic_household_size_and_income.png" alt="Project 1" class="project-image">
+          <div class="project-details">
+            <p class="project-description-text">A study of household size and income in the city of Barcelona</p>
+            <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/household_size_and_income/blob/main/household_size_and_income.ipynb', '_blank')">See project</button>
+          </div>
         </div>
-      </div>
-      <div class="project">
-        <img src="./images/project3.jpg" alt="Project 3">
-        <div class="project-details">
-          <h3>Project 3 Title</h3>
-          <p>Description for Project 3.</p>
+        <div class="project">
+          <img src="./images/pic_names_and_ethnicities.png" alt="Project 2" class="project-image">
+          <div class="project-details">
+            <p class="project-description-text">An exploration of ethnicity and baby naming trends in New York City</p>
+            <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/names_and_ethnicities/blob/main/names_and_ethnicities.ipynb', '_blank')">See project</button>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
+      <div class="section-image">
+        <img src="./images/section_icon_contact.png" alt="Contact Icon" width="100" height="100">
+      </div>
       <h2>Contact</h2>
-      <p>If you want to contact me, you can send me an email through the form below.</p>
+      <div class="section-intro">
+      <p>Send me a message through the form below.</p>
+      </div>
       <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST"
         style="max-width: 300px; margin: 0 auto;">
         <div style="display: flex; flex-direction: column;">
@@ -388,16 +543,17 @@
     </section>
   </div>
 
+  <!-- Copyright Section -->
   <div class="copyright">
     <p>Copyright &copy; David Aguilar Lleyda, 2024. All rights reserved.</p>
   </div>
 
   <script>
-    document.querySelector("button").addEventListener("mouseover", function () {
+    document.querySelector("#contact button").addEventListener("mouseover", function () {
       this.style.backgroundColor = "#d2042d";
     });
 
-    document.querySelector("button").addEventListener("mouseout", function () {
+    document.querySelector("#contact button").addEventListener("mouseout", function () {
       this.style.backgroundColor = "black";
     });
   </script>
