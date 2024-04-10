@@ -5,39 +5,48 @@
   <!-- Global Styles -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Personal Site</title>
+  <title>David Aguilar Lleyda</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: 'Nunito Sans', sans-serif;
+      margin: 0 auto; /* Center the body horizontally */
+      font-family: 'Inter', sans-serif;  /* font-family: 'Nunito Sans', sans-serif; */
+      font-weight: 400;
+      line-height: 1.6; /* spacing inbetween lines */
+      background-color: white;
     }
 
     .container {
-      padding: 0 140px;
-    }
+  padding: 0; 
+}
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 10px;
-      }
-    }
+@media (max-width: 680px) {
+  .container {
+    padding: 0 10px; 
+  }
+}
 
     section {
         padding-top: 80px;
-        margin-top: -80px; /* Combination of padding-top and margin-top to compensate for the fixed header height, allowing header shortcuts to direct to top of section */
         padding-bottom: 0px;
         margin-top: 30px;
         background-color: #FFFFFF;
         border-radius: 8px;
         text-align: center;
-        max-width: 100%;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+        box-sizing: border-box; /* Include padding and border in the element's total width */
+        background-color: white;
     }
 
 
-    section h2 {
+    .section-title {
+      font-family: "Marcellus", serif;
+      font-weight: 300;
+      color: #000000;;
       margin-top: 0px;
       margin-bottom: 20px;
       font-size: 40px;
@@ -46,6 +55,7 @@
     .section-intro {
       max-width: 60%;
       margin: 0 auto;
+      text-align: left;
     }
 
     a {
@@ -68,37 +78,66 @@
 
   </style>
 
-  <!-- Header Styles -->
-  <style>
-    header {
-      background-color: #D2042D;
-      color: #FFFFFF;
-      padding: 15px;
-      text-align: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+<!-- Header Styles -->
+<style>
+/* Header Styles */
+header {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 0px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px; /* Adjust the height of the header */
+}
 
-    header .name {
-      text-align: left;
-    }
+/* Style for the header name */
+header .header-name {
+  font-family: "Marcellus", serif;
+  font-weight: 100;
+}
 
-    header a {
-      color: #FFFFFF;
-      text-decoration: none;
-      margin: 0 10px;
-      text-align: right;
-    }
+/* Style for the header sections */
+header .header-sections {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+}
 
-    header a:hover {
-      color: #000000;
-    }
-  </style>
+/* Style for the header links */
+.header-link {
+  position: relative; /* Make the anchor tag relative to its container */
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Rectangle around the hovered link */
+.header-link:hover::after {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position the rectangle relative to the anchor tag */
+  top: 0; /* Align rectangle with top of header */
+  left: 0; /* Align rectangle with left of anchor tag */
+  width: 100%; /* Width of the rectangle same as the anchor tag */
+  height: 40px; /* Height of the rectangle same as the header */
+  background-color: #D2042D; /* Background color of the rectangle */
+  opacity: 1; /* Adjust opacity to make the red color more prominent */
+  z-index: -1; /* Move the rectangle behind the text */
+  pointer-events: none; /* Ensure the rectangle doesn't interfere with hover events */
+}
+
+/* Style for the text in the header links when hovered */
+.header-link:hover {
+  color: white; /* Change text color to white when hovered */
+}
+
+</style>
+
 
   <!-- About Section Styles -->
   <style>
@@ -107,17 +146,28 @@
     }
 
     .about-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-direction: row;
-      max-width: 100%;
-    }
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the container vertically */
+    justify-content: center; /* Center horizontally */
+    flex-direction: row; /* Place image and text side by side */
+    max-width: 100%;
+    margin: 0 auto; /* Center horizontally */
+}
 
     .about-text {
       max-width: 60%;
       text-align: justify;
       position: relative;
+      margin-left: 40px;
+    }
+
+    .name-about {
+      font-family: "Marcellus", serif;
+      font-weight: 300;
+      color: #000000;;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      font-size: 50px;
     }
 
     .about-image {
@@ -125,6 +175,7 @@
       height: auto;
       border-radius: 8px;
       transition: transform 0.3s;
+      margin-right: 40px; /* add space between image and text on its right*/
     }
 
     .about-image:hover {
@@ -165,10 +216,13 @@
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
-      padding: 30px 0;
+      padding-top: 20px;
     }
 
     .resume-subheader {
+      font-family: "Marcellus", serif;
+      font-weight: 100;
+      font-size: 25px;
       text-align: left;
       color: #000000;
       text-align: center; 
@@ -185,6 +239,13 @@
       width: 30px;
       height: auto;
     }
+
+  .resume-cell {
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid black;
+    word-wrap: break-word;
+  }
 
   </style>
 
@@ -212,80 +273,107 @@
     }
 
     .skill-category p {
-      color: #d2042d;
+      color: #000000;
       font-weight: bold;
     }
   </style>
 
-  <!-- Projects Section Styles -->
-  <style>
-    #projects {
-      text-align: center;
-    }
-  
-    .projects-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-  
-    .project {
-  position: relative;
-  margin: 10px;
-  overflow: hidden;
-  width: 350px;
-  height: 200px;
+<!-- Projects Section Styles -->
+<style>
+  #projects {
+    text-align: center;
+  }
+
+  .project-filter-button {
+  background-color: black;
+  color: white;
+  font-size: 1em; /* Set font size to match body text */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+  margin: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
   border-radius: 8px;
+  }
+
+  .project-filter-button:hover {
+    background-color: #D2042D;
+  }
+
+  .project-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 5px; /* Add margin between rows, make sure its same as margin for project-filter-button */
+  }
+
+  .projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusted from space-around to space-between */
+    margin: 0 0px;
+  }
+
+  .project {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    width: 350px;
+    height: 200px;
+    border-radius: 8px;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .project:hover .project-image {
+    filter: brightness(70%);
+  }
+
+  .project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0px 0px;
+  opacity: 0;
+  transition: background-color 0.3s, opacity 0.3s;
+  z-index: 1;
 }
 
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Maintain aspect ratio, covering the entire container */
-  object-position: center; /* Center the image within the container */
-  border-radius: 8px;
+  .project-details h3,
+  .project-details p {
+    margin: 0;
+  }
+
+  .project-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .project-description-text {
+  padding: 0 10px; /* horizontal padding */
 }
-  
-    .project:hover .project-image {
-      filter: brightness(70%);
-    }
-  
-    .project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Maintain aspect ratio, covering the entire container */
-  border-radius: 8px;
-}
-  
-    .project-details {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      color: white; /* Set text color to white */
-      padding-left: 2px;
-      padding-right: 2px;
-    }
-  
-    .project-details h3 {
-      font-size: 14px; /* Adjust the font size as needed */
-      margin-bottom: 10px;
-    }
-  
-    .project:hover .project-details {
-      opacity: 1;
-    }
-  
-    .project-description-text {
-      font-size: 16px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    
-    .project-button {
+
+  .project-button {
     background-color: black;
     color: white;
     padding: 10px 20px;
@@ -293,15 +381,20 @@
     cursor: pointer;
     font-size: 12px;
     transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+  }
+
+  .project:hover .project-details {
+    opacity: 1;
   }
 
   .project-button:hover {
     background-color: #d2042d;
     color: white;
   }
-  </style>
-  
-  
+</style>
+
+
   <!-- Contact Section Styles -->
   <style>
     .contact-form {
@@ -310,51 +403,80 @@
     }
 
     .resume-entry p span {
-      color: #d2042d;
+      color: #000000;
     }
 
     .resume-entry p strong {
       font-weight: bold;
     }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      font-size: 20px; /* font size for placeholder text on contact text boxes */
+    }
+    
   </style>
 
   <!-- Copyright Section Styles -->
   <style>
-    .copyright {
-      background-color: #D2042D;
-      color: #FFFFFF;
-      padding: 5px;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.copyright {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1px 0;
+  text-align: center;
+  margin-top: 20px;
+  clear: both;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  line-height: 0.8; /* Adjust the line height to reduce the height of the copyright banner */
+}
+
   </style>
 
 </head>
 
 <body>
 
-  <header>
-    <span style="flex: 1;">David Aguilar Lleyda</span>
-    <div style="flex: 1;">
-      <a href="#about">About</a>
-      <a href="#resume">Résumé</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <header id="mainHeader">
+    <span class="header-name" style="flex: 1;">David Aguilar Lleyda</span>
+    <div class="header-sections" style="flex: 1;">
+      <a href="#about" class="header-link">ABOUT</a>
+      <a href="#resume" class="header-link">RÉSUMÉ</a>
+      <a href="#projects" class="header-link">PROJECTS</a>
+      <a href="#contact" class="header-link">CONTACT</a>
     </div>
   </header>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('.header-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
   <div class="container">
     <!-- About Section -->
     <section id="about">
-      <!--  <h2>About Me</h2> -->
       <div class="about-content">
-        <img src="./images/about_pic.png" alt="Your Name" width="200" height="200" id="aboutImage">
+        <img src="./images/about_pic.png" alt="About pic" width="200" height="200" id="aboutpic">
         <div class="about-text">
-          <p>Welcome to my website!<br> My name is David, and I’m in the data business.
+          <div class="name-about">David Aguilar Lleyda, PhD</div>
+          <p>Welcome to my website! My name is David, and I'm a data scientist.
             Before that, I was a researcher in cognitive science for more than 10 years. I formed part of three
             different academic institutions in as many countries, and I <a
-              href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en">co-authored many scientific
+              href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">co-authored many scientific
               articles</a>.
             During my time in academia I worked with data on a daily basis, developing <a href="#resume">a set of
               skills</a> that I showcase here as <a href="#projects">a series of projects</a>. Feel free to browse
@@ -363,7 +485,7 @@
             <a href="https://github.com/aguilarlleyda" target="_blank">
               <img src="./images/icon_github.png" alt="Github Icon" class="social-icon">
             </a>
-            <a href="https://www.linkedin.com/in/david-aguilar-lleyda-2a69532b1/" target="_blank">
+            <a href="https://www.linkedin.com/in/aguilarlleyda/" target="_blank">
               <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
             </a>
           </div>
@@ -373,14 +495,15 @@
 
     <script>
       // JavaScript to change the image source on hover
-      const aboutImage = document.getElementById("aboutImage");
-      aboutImage.addEventListener("mouseover", function () {
-        this.src = "./images/about_pic_hover.png"; 
-      });
-  
-      aboutImage.addEventListener("mouseout", function () {
-        this.src = "./images/about_pic.png";
-      });
+      const aboutImage = document.getElementById("aboutpic");
+
+    aboutImage.addEventListener("mouseover", function () {
+      this.src = "./images/about_pic_hover.png"; 
+    });
+
+aboutImage.addEventListener("mouseout", function () {
+  this.src = "./images/about_pic.png";
+});
     </script>
 
     <!-- Resume Section -->
@@ -388,90 +511,75 @@
       <div class="section-image">
         <img src="./images/section_icon_resume.png" alt="Resume Icon" width="100" height="100">
       </div>
-      <h2>Résumé</h2>
+      <div class="section-title">Résumé</div>
       <div class="section-intro">
       <p>Here you can find a summary of the positions I've held,
         as well as a list of some relevant skills I picked up along the way. You can also
-        <a href="./resources/CV.pdf" download="CV.pdf">download a pdf version of my CV by clicking here</a>.
+        <a href="./resources/resume.pdf" download="resume.pdf" target="_blank">download a pdf version of my résumé by clicking here</a>.
       </p>
     </div>
 
-      <!-- Experience Section -->
-      <h3 class=resume-subheader>Experience</h3>
-      <div class="resume-info"
-        style="margin-bottom: 5px; display: flex; justify-content: center; align-items: flex-start; text-align: center;">
-        <!-- Entry 1 -->
-        <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
-          <p style="margin: 0;">
-            <h4 style="color: #d2042d; display: inline; margin: 0;">2011 - 2017</h4><br>
-            <strong style="color: black; font-weight: bold;">PhD student</strong><br>
-            University of Barcelona<br>
-            <i>Barcelona, Catalonia</i>
-          </p>
-        </div>
-        <!-- Arrow 1 -->
-        <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
-          <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
-        </div>
-        <!-- Entry 2 -->
-        <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
-          <p style="margin: 0;">
-            <h4 style="color: #d2042d; display: inline; margin: 0;">2018 - 2020</h4><br>
-            <strong style="color: black; font-weight: bold;">Postdoctoral Researcher</strong><br>
-            French National Centre<br>for Scientific Research<br>
-            <i>Paris, France</i>
-          </p>
-        </div>
-        <!-- Arrow 2 -->
-        <div class="resume-arrow" style="margin-top: 10px; align-self: center;">
-          <img src="./images/arrow_red.png" alt="Arrow Line" width="30" height="15">
-        </div>
-        <!-- Entry 3 -->
-        <div class="resume-entry" style="margin-bottom: 0px; text-align: center; vertical-align: top;">
-          <p style="margin: 0;">
-            <h4 style="color: #d2042d; display: inline; margin: 0;">2020 - 2024</h4><br>
-            <strong style="color: black; font-weight: bold;">Research Scientist</strong><br>
-            RIKEN Center for Brain Science<br>
-            <i>Wako, Japan</i>
-          </p>
-        </div>
-      </div>
+<!-- Experience Section -->
+<div class="resume-subheader">Experience</div>
+<div class="resume-info" style="margin-bottom: 55px; overflow-x: auto;">
+  <table style="width: 80%; border-collapse: collapse; border-bottom: 2px solid black;">
+    <!-- Table Header -->
+    <tr>
+      <th style="min-width: 100px; text-align: center; padding: 8px;">Years</th>
+      <th style="min-width: 150px; text-align: center; padding: 8px;">Role</th>
+      <th style="min-width: 200px; text-align: center; padding: 8px;">Institution</th>
+      <th style="min-width: 150px; text-align: center; padding: 8px;">Location</th>
+    </tr>
+    <!-- Entry 1 -->
+    <tr>
+      <td class="resume-cell">2020 - 2024</td>
+      <td class="resume-cell">Research scientist</td>
+      <td class="resume-cell">RIKEN Center for Brain Science</td>
+      <td class="resume-cell">Wako, Japan</td>
+    </tr>
+    <!-- Entry 2 -->
+    <tr>
+      <td class="resume-cell">2018 - 2020</td>
+      <td class="resume-cell">Postdoctoral researcher</td>
+      <td class="resume-cell">French National Centre for Scientific Research</td>
+      <td class="resume-cell">Paris, France</td>
+    </tr>
+    <!-- Entry 3 -->
+    <tr>
+      <td class="resume-cell">2011 - 2017</td>
+      <td class="resume-cell">Doctoral candidate</td>
+      <td class="resume-cell">University of Barcelona</td>
+      <td class="resume-cell">Barcelona, Catalonia</td>
+    </tr>
+  </table>
+</div>
 
-      <!-- Skills Section -->
-      <h3 class=resume-subheader>Skills</h3>
-      <div class="skills-section" style="max-width: 1200px; margin: 0px auto 0px; text-align: center;">
-
-        <div class="skills-wrapper">
-          <!-- Skill Category 1 -->
-          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Domain knowledge</h4>
-            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-              <li>Data science, data analysis, statistics, data visualization, cognitive science</li>
-            </ul>
-          </div>
-          <!-- Skill Category 2 -->
-          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programming languages</h4>
-            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-              <li>Python, R, SQL, MATLAB, JavaScript</li>
-            </ul>
-          </div>
-          <!-- Skill Category 3 -->
-          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Programs and tools</h4>
-            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-              <li>Tableau, Git, Microsoft Office, Affinity Designer</li>
-            </ul>
-          </div>
-          <!-- Skill Category 4 -->
-          <div class="skill-category" style="max-width: 300px; margin: 0 5px 5px; text-align: left; display: inline-block; vertical-align: top;">
-            <h4 style="color: #d2042d; text-align: center; margin-bottom: 5px;">Python libraries</h4>
-            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px;">
-              <li>Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Plotly </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<!-- Skills Section -->
+<div class="resume-subheader">Skills</div>
+<div class="resume-info" style="margin-bottom: 5px; overflow-x: auto;">
+  <table class="skills-table" style="width: 80%; border-collapse: collapse; border-bottom: 2px solid black; margin: 0 auto;">
+    <!-- Skill Category 1 -->
+    <tr>
+      <td class="resume-cell" style="text-align: left;"><strong style="padding-right: 20px;">General skills:</strong> Data science, data analysis, statistics, data visualization, cognitive science</td>
+    </tr>
+    <!-- Skill Category 2 -->
+    <tr>
+      <td class="resume-cell" style="text-align: left;"><strong style="padding-right: 20px;">Programming languages:</strong> Python, R, SQL, MATLAB, JavaScript</td>
+    </tr>
+    <!-- Skill Category 3 -->
+    <tr>
+      <td class="resume-cell" style="text-align: left;"><strong style="padding-right: 20px;">Programs and tools:</strong> Tableau, Git, Microsoft Office, Affinity Designer</td>
+    </tr>
+    <!-- Skill Category 4 -->
+    <tr>
+      <td class="resume-cell" style="text-align: left;"><strong style="padding-right: 20px;">Python libraries:</strong> Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Plotly</td>
+    </tr>
+    <!-- Skill Category 5 -->
+    <tr>
+      <td class="resume-cell" style="text-align: left;"><strong style="padding-right: 20px;">R packages:</strong> dplyr, ggplot2,tidyr, lme4, lmtest</td>
+    </tr>
+  </table>
+</div>
 
     </section>
 
@@ -480,74 +588,118 @@
       <div class="section-image">
         <img src="./images/section_icon_projects.png" alt="Projects Icon" width="100" height="100">
       </div>
-      <h2>Projects</h2>
+      <div class="section-title">Projects</div>
       <div class="section-intro">
       <p>What follows is a number of projects I developed to illustrate my use of different programming languages and software. 
-        As someone with a penchant for demographics, you'll see a lot of these projects deal with identifying differences in city and country datasets.</p>
-        <p>If what you want is a commented summary of my previous academic work, you can find it here.</p>
+        As someone with a penchant for demographics, you'll see a lot of these projects deal with identifying differences in city and country datasets.
+        You can also filter the projects by clicking on one of the buttons below. </p>
+        <p>If what you want is a commented summary of my previous academic work, I am still preparing it. In the meantime you can visit <a
+          href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">my Google Scholar profile.</a></p>
       </div>
       </p>
+      <div class="project-buttons">  <!-- First row of buttons (type of project) -->
+        <button class="project-filter-button" onclick="filterProjects('all')">All</button>
+        <button class="project-filter-button" onclick="filterProjects('machine_learning')">Machine learning</button>
+        <button class="project-filter-button" onclick="filterProjects('data_analysis')">Data analysis</button>
+        <button class="project-filter-button" onclick="filterProjects('data_visualization')">Data visualization</button>
+      </div>
+      <div class="project-buttons"> <!-- Second row of buttons (language / program used) -->
+        <button class="project-filter-button" onclick="filterProjects('python')">Python</button>
+        <button class="project-filter-button" onclick="filterProjects('r')">R</button>
+        <button class="project-filter-button" onclick="filterProjects('tableau')">Tableau</button>
+      </div>
       <div class="projects-wrapper">
-        <div class="project">
+        <div class="project" data-keywords="data_analysis,python">
           <img src="./images/pic_household_size_and_income.png" alt="Project 1" class="project-image">
           <div class="project-details">
             <p class="project-description-text">A study of household size and income in the city of Barcelona</p>
+            <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
             <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/household_size_and_income/blob/main/household_size_and_income.ipynb', '_blank')">See project</button>
           </div>
         </div>
-        <div class="project">
+        <div class="project" data-keywords="data_analysis,python">
           <img src="./images/pic_names_and_ethnicities.png" alt="Project 2" class="project-image">
           <div class="project-details">
             <p class="project-description-text">An exploration of ethnicity and baby naming trends in New York City</p>
+            <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
             <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/names_and_ethnicities/blob/main/names_and_ethnicities.ipynb', '_blank')">See project</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="section-image">
-        <img src="./images/section_icon_contact.png" alt="Contact Icon" width="100" height="100">
-      </div>
-      <h2>Contact</h2>
-      <div class="section-intro">
-      <p>Send me a message through the form below.</p>
-      </div>
-      <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST"
-        style="max-width: 300px; margin: 0 auto;">
-        <div style="display: flex; flex-direction: column;">
-          <div style="margin-bottom: 10px; display: flex; align-items: center;">
-            <label for="name" style="width: 80px; margin-right: 10px;">Your name:</label>
-            <input type="text" id="name" name="name" style="flex: 1;" required>
-          </div>
-
-          <div style="margin-bottom: 10px; display: flex; align-items: center;">
-            <label for="email" style="width: 80px; margin-right: 10px;">Your email:</label>
-            <input type="email" id="email" name="email" style="flex: 1;" required>
-          </div>
-
-          <div style="margin-bottom: 10px; display: flex; align-items: center;">
-            <label for="message" style="width: 80px; margin-right: 10px;">Message:</label>
-            <textarea id="message" name="message" style="flex: 1;" required></textarea>
-          </div>
-
-          <div style="margin-bottom: 20px;">
-            <button type="submit"
-              style="width: 100%; padding: 10px; font-size: inherit; background-color: black; color: white; transition: background-color 0.3s;">
-              Submit
-            </button>
+        <div class="project" data-keywords="data_visualization,tableau">
+          <img src="./images/pic_erc_dashboard.png" alt="Project 3" class="project-image">
+          <div class="project-details">
+            <p class="project-description-text"> Dashboard of European academic funding</p>
+            <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
+            <button class="project-button" onclick="window.open('https://public.tableau.com/views/ERCgrantsdashboard/Dashboard_ERC?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
           </div>
         </div>
-      </form>
+      </div>
+      <div class="project" data-keywords="data_visualization,tableau">
+        <img src="./images/pic_tokyo_metro_viz.png" alt="Project 4" class="project-image">
+        <div class="project-details">
+          <p class="project-description-text"> Visualization of Greater Tokyo figures</p>
+          <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
+          <button class="project-button" onclick="window.open('https://public.tableau.com/views/GreaterTokyoAreafigures/Visualization?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+function filterProjects(tag) {
+  const projects = document.querySelectorAll('.project');
+
+  projects.forEach(project => {
+    const keywords = project.dataset.keywords.split(',');
+    if (keywords.includes(tag) || tag === 'all') {
+      project.style.display = 'block';
+    } else {
+      project.style.display = 'none';
+    }
+  });
+}
+    </script>
+
     </section>
+
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="section-image">
+    <img src="./images/section_icon_contact.png" alt="Contact Icon" width="100" height="100">
   </div>
+  <div class="section-title">Contact</div>
+  <div class="section-intro" style="text-align: center;">
+    <p>Send me a message through the form below.</p>
+  </div>
+  <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST" style="max-width: 300px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column;">
+      <div style="margin-bottom: 10px; display: flex; align-items: center;">
+        <input type="text" id="name" name="name" style="flex: 1; height: 30px;" placeholder="Your name" required>
+      </div>
+
+      <div style="margin-bottom: 10px; display: flex; align-items: center;">
+        <input type="email" id="email" name="email" style="flex: 1; height: 30px;" placeholder="Your email" required>
+      </div>
+
+      <div style="margin-bottom: 10px; display: flex; align-items: center;">
+        <textarea id="message" name="message" style="flex: 1; height: 100px;" placeholder="Message" required></textarea>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <button type="submit" style="width: 100%; padding: 10px; font-size: inherit; background-color: black; color: white; transition: background-color 0.3s; border-radius: 10px; box-shadow: none; outline: none;">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
 
   <!-- Copyright Section -->
   <div class="copyright">
     <p>Copyright &copy; David Aguilar Lleyda, 2024. All rights reserved.</p>
   </div>
 
+  
   <script>
     document.querySelector("#contact button").addEventListener("mouseover", function () {
       this.style.backgroundColor = "#d2042d";
