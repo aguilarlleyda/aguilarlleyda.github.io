@@ -583,83 +583,89 @@ aboutImage.addEventListener("mouseout", function () {
 
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="section-image">
-        <img src="./images/section_icon_projects.png" alt="Projects Icon" width="100" height="100">
-      </div>
-      <div class="section-title">Projects</div>
-      <div class="section-intro">
-      <p>What follows is a number of projects I developed to illustrate my use of different programming languages and software. 
-        As someone with a penchant for demographics, you'll see a lot of these projects deal with identifying differences in city and country datasets.
-        You can also filter the projects by clicking on one of the buttons below. </p>
-        <p>If what you want is a commented summary of my previous academic work, I am still preparing it. In the meantime you can visit <a
-          href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">my Google Scholar profile.</a></p>
-      </div>
-      </p>
-      <div class="project-buttons">  <!-- First row of buttons (type of project) -->
-        <button class="project-filter-button" onclick="filterProjects('all')">All</button>
-        <button class="project-filter-button" onclick="filterProjects('machine_learning')">Machine learning</button>
-        <button class="project-filter-button" onclick="filterProjects('data_analysis')">Data analysis</button>
-        <button class="project-filter-button" onclick="filterProjects('data_visualization')">Data visualization</button>
-      </div>
-      <div class="project-buttons"> <!-- Second row of buttons (language / program used) -->
-        <button class="project-filter-button" onclick="filterProjects('python')">Python</button>
-        <button class="project-filter-button" onclick="filterProjects('r')">R</button>
-        <button class="project-filter-button" onclick="filterProjects('tableau')">Tableau</button>
-      </div>
-      <div class="projects-wrapper">
-        <div class="project" data-keywords="data_analysis,python">
-          <img src="./images/pic_household_size_and_income.png" alt="Project 1" class="project-image">
-          <div class="project-details">
-            <p class="project-description-text">A study of household size and income in the city of Barcelona</p>
-            <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
-            <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/household_size_and_income/blob/main/household_size_and_income.ipynb', '_blank')">See project</button>
-          </div>
-        </div>
-        <div class="project" data-keywords="data_analysis,python">
-          <img src="./images/pic_names_and_ethnicities.png" alt="Project 2" class="project-image">
-          <div class="project-details">
-            <p class="project-description-text">An exploration of ethnicity and baby naming trends in New York City</p>
-            <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
-            <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/names_and_ethnicities/blob/main/names_and_ethnicities.ipynb', '_blank')">See project</button>
-          </div>
-        </div>
-        <div class="project" data-keywords="data_visualization,tableau">
-          <img src="./images/pic_erc_dashboard.png" alt="Project 3" class="project-image">
-          <div class="project-details">
-            <p class="project-description-text"> Dashboard of European academic funding</p>
-            <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
-            <button class="project-button" onclick="window.open('https://public.tableau.com/views/ERCgrantsdashboard/Dashboard_ERC?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
-          </div>
-        </div>
-      </div>
-      <div class="project" data-keywords="data_visualization,tableau">
-        <img src="./images/pic_tokyo_metro_viz.png" alt="Project 4" class="project-image">
-        <div class="project-details">
-          <p class="project-description-text"> Visualization of Greater Tokyo figures</p>
-          <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
-          <button class="project-button" onclick="window.open('https://public.tableau.com/views/GreaterTokyoAreafigures/Visualization?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
-        </div>
+   <!-- Projects Section -->
+<section id="projects">
+  <div class="section-image">
+    <img src="./images/section_icon_projects.png" alt="Projects Icon" width="100" height="100">
+  </div>
+  <div class="section-title">Projects</div>
+  <div class="section-intro">
+    <p>What follows is a number of projects I developed to illustrate my use of different programming languages and software. 
+      As someone with a penchant for demographics, you'll see a lot of these projects deal with identifying differences in city and country datasets.
+      You can also filter the projects by clicking on one of the buttons below. </p>
+    <p>If what you want is a commented summary of my previous academic work, I am still preparing it. In the meantime you can visit 
+      <a href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">my Google Scholar profile.</a></p>
+  </div>
+  <div class="project-buttons">  <!-- First row of buttons (type of project) -->
+    <button class="project-filter-button" onclick="filterProjects('all')">All</button>
+    <button class="project-filter-button" onclick="filterProjects('machine_learning')">Machine Learning</button>
+    <button class="project-filter-button" onclick="filterProjects('data_analysis')">Data Analysis</button>
+    <button class="project-filter-button" onclick="filterProjects('data_visualization')">Data Visualization</button>
+    <button class="project-filter-button" onclick="filterProjects('simulations')">Simulations</button>
+  </div>
+  <div class="project-buttons"> <!-- Second row of buttons (language / program used) -->
+    <button class="project-filter-button" onclick="filterProjects('python')">Python</button>
+    <button class="project-filter-button" onclick="filterProjects('r')">R</button>
+    <button class="project-filter-button" onclick="filterProjects('tableau')">Tableau</button>
+  </div>
+  <div class="projects-wrapper">
+    <div class="project" data-keywords="data_analysis,python">
+      <img src="./images/pic_household_size_and_income.png" alt="Project 1" class="project-image">
+      <div class="project-details">
+        <p class="project-description-text">A study of household size and income in the city of Barcelona</p>
+        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
+        <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/household_size_and_income/blob/main/household_size_and_income.ipynb', '_blank')">See project</button>
       </div>
     </div>
+    <div class="project" data-keywords="data_analysis,python">
+      <img src="./images/pic_names_and_ethnicities.png" alt="Project 2" class="project-image">
+      <div class="project-details">
+        <p class="project-description-text">An exploration of ethnicity and baby naming trends in New York City</p>
+        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
+        <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/names_and_ethnicities/blob/main/names_and_ethnicities.ipynb', '_blank')">See project</button>
+      </div>
+    </div>
+    <div class="project" data-keywords="data_visualization,tableau">
+      <img src="./images/pic_erc_dashboard.png" alt="Project 3" class="project-image">
+      <div class="project-details">
+        <p class="project-description-text">Dashboard of European academic funding</p>
+        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
+        <button class="project-button" onclick="window.open('https://public.tableau.com/views/ERCgrantsdashboard/Dashboard_ERC?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
+      </div>
+    </div>
+    <div class="project" data-keywords="data_visualization,tableau">
+      <img src="./images/pic_tokyo_metro_viz.png" alt="Project 4" class="project-image">
+      <div class="project-details">
+        <p class="project-description-text">Visualization of Greater Tokyo figures</p>
+        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
+        <button class="project-button" onclick="window.open('https://public.tableau.com/views/GreaterTokyoAreafigures/Visualization?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
+      </div>
+    </div>
+    <div class="project" data-keywords="simulations,r">
+      <img src="./images/pic_hotstove.png" alt="Project 5" class="project-image">
+      <div class="project-details">
+        <p class="project-description-text">Exploration-exploitation choices and the hot stove effect: a simulation-based approach</p>
+        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Simulations, R</span></p>
+        <button class="project-button" onclick="window.open('https://github.com/aguilarlleyda/hot_stove_sims/blob/7333928a1832fc2c2e1650ac3fc90e1fab0e2018/hot_stove_sims.md', '_blank')">See project</button>
+      </div>
+    </div>
+  </div>
 
-    <script>
-function filterProjects(tag) {
-  const projects = document.querySelectorAll('.project');
+  <script>
+    function filterProjects(tag) {
+      const projects = document.querySelectorAll('.project');
 
-  projects.forEach(project => {
-    const keywords = project.dataset.keywords.split(',');
-    if (keywords.includes(tag) || tag === 'all') {
-      project.style.display = 'block';
-    } else {
-      project.style.display = 'none';
+      projects.forEach(project => {
+        const keywords = project.dataset.keywords.split(',');
+        if (keywords.includes(tag) || tag === 'all') {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
     }
-  });
-}
-    </script>
-
-    </section>
+  </script>
+</section>
 
 
 <!-- Contact Section -->
