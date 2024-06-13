@@ -515,22 +515,26 @@ header .header-name {
   <script>
     // Smooth scrolling for header and about section links to other sections
     document.addEventListener('DOMContentLoaded', function () {
+  var headerHeight = document.querySelector('header').offsetHeight;
   var links = document.querySelectorAll('a[href^="#"]');
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function (event) {
+  
+  links.forEach(function(link) {
+    link.addEventListener('click', function (event) {
       event.preventDefault();
       var targetId = this.getAttribute('href').substring(1);
       var targetElement = document.getElementById(targetId);
-      var headerOffset = document.querySelector('header').offsetHeight; // Get the height of the fixed header
-      var elementPosition = targetElement.getBoundingClientRect().top;
-      var offsetPosition = elementPosition - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      if (targetElement) {
+        var elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        var offsetPosition = elementPosition - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     });
-  }
+  });
 });
   </script>
 
