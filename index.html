@@ -140,7 +140,7 @@ header .header-name {
   top: 0; /* Align rectangle with top of header */
   left: 0; /* Align rectangle with left of anchor tag */
   width: 100%; /* Width of the rectangle same as the anchor tag */
-  height: 40px; /* Height of the rectangle same as the header */
+  height: 94%; /* Height of the rectangle adjusted to match header */
   background-color: #D2042D; /* Background color of the rectangle */
   opacity: 1; /* Adjust opacity to make the red color more prominent */
   z-index: -1; /* Move the rectangle behind the text */
@@ -515,31 +515,35 @@ header .header-name {
   <script>
     // Smooth scrolling for header and about section links to other sections
     document.addEventListener("DOMContentLoaded", function () {
-  const headerLinks = document.querySelectorAll("header a");
-  const aboutLinks = document.querySelectorAll("#about a");
-
-  function smoothScroll(event) {
-    event.preventDefault();
-    const targetId = this.getAttribute("href");
-    const targetElement = document.querySelector(targetId);
-
-    const headerHeight = document.querySelector('header').offsetHeight;
-
-    window.scrollTo({
-      top: targetElement.offsetTop - headerHeight,
-      behavior: "smooth"
+      const headerLinks = document.querySelectorAll("header a");
+      const aboutLinks = document.querySelectorAll("#about a");
+  
+      function smoothScroll(event) {
+        // Check if the link has a target attribute or is an external link
+        if (this.getAttribute("target") === "_blank" || this.href.startsWith("http")) {
+          return; // Exit the function and allow the default behavior
+        }
+  
+        event.preventDefault();
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+  
+        const headerHeight = document.querySelector('header').offsetHeight;
+  
+        window.scrollTo({
+          top: targetElement.offsetTop - headerHeight,
+          behavior: "smooth"
+        });
+      }
+  
+      headerLinks.forEach(link => {
+        link.addEventListener("click", smoothScroll);
+      });
+  
+      aboutLinks.forEach(link => {
+        link.addEventListener("click", smoothScroll);
+      });
     });
-  }
-
-  headerLinks.forEach(link => {
-    link.addEventListener("click", smoothScroll);
-  });
-
-  aboutLinks.forEach(link => {
-    link.addEventListener("click", smoothScroll);
-  });
-});
-
   </script>
 
   <div class="container">
@@ -558,8 +562,8 @@ header .header-name {
               skills</a> that I showcase here as <a href="#projects">a series of projects</a>. Feel free to browse
             around, and <a href="#contact">contact me</a> if you have any question or proposal.</p>
           <div class="icons-socials">
-            <a href="https://github.com/aguilarlleyda" target="_blank">
-              <img src="./images/icon_github.png" alt="Github Icon" class="social-icon">
+        <a href="https://github.com/aguilarlleyda" target="_blank">
+          <img class="social-icon" src="./images/icon_github.png" alt="GitHub">
             </a>
             <a href="https://www.linkedin.com/in/aguilarlleyda/" target="_blank">
               <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
@@ -669,17 +673,19 @@ header .header-name {
     <p>What follows is a number of projects I developed to illustrate my use of different programming languages and software. 
       As someone with a penchant for demographics, you'll see a lot of these projects deal with identifying differences in city and country datasets.
       You can also filter the projects by clicking on one of the buttons below. </p>
-    <p>If what you want is a commented summary of my previous academic work, I am still preparing it. In the meantime you can visit 
+    <p>If what you want is a commented summary of my previous academic work, I'm still preparing it. In the meantime you can visit 
       <a href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">my Google Scholar profile.</a></p>
   </div>
-  <div class="project-buttons">  <!-- First row of buttons (type of project) -->
-    <button class="project-filter-button" onclick="filterProjects('all')">All</button>
-    <button class="project-filter-button" onclick="filterProjects('machine_learning')">Machine Learning</button>
-    <button class="project-filter-button" onclick="filterProjects('data_analysis')">Data Analysis</button>
-    <button class="project-filter-button" onclick="filterProjects('data_visualization')">Data Visualization</button>
+  <div class="project-buttons">  <!-- First row of buttons (show all) -->
+    <button class="project-filter-button" onclick="filterProjects('all')">Show all</button>
+  </div>
+  <div class="project-buttons">  <!-- Second row of buttons (type of project) -->
+    <button class="project-filter-button" onclick="filterProjects('machine_learning')">Machine learning</button>
+    <button class="project-filter-button" onclick="filterProjects('data_analysis')">Data analysis</button>
+    <button class="project-filter-button" onclick="filterProjects('data_visualization')">Data visualization</button>
     <button class="project-filter-button" onclick="filterProjects('simulations')">Simulations</button>
   </div>
-  <div class="project-buttons"> <!-- Second row of buttons (language / program used) -->
+  <div class="project-buttons"> <!-- Third row of buttons (language / program used) -->
     <button class="project-filter-button" onclick="filterProjects('python')">Python</button>
     <button class="project-filter-button" onclick="filterProjects('r')">R</button>
     <button class="project-filter-button" onclick="filterProjects('tableau')">Tableau</button>
