@@ -514,36 +514,24 @@ header .header-name {
 
   <script>
     // Smooth scrolling for header and about section links to other sections
-    document.addEventListener("DOMContentLoaded", function () {
-      const headerLinks = document.querySelectorAll("header a");
-      const aboutLinks = document.querySelectorAll("#about a");
-  
-      function smoothScroll(event) {
-        // Check if the link has a target attribute or is an external link
-        if (this.getAttribute("target") === "_blank" || this.href.startsWith("http")) {
-          return; // Exit the function and allow the default behavior
-        }
-  
-        event.preventDefault();
-        const targetId = this.getAttribute("href");
-        const targetElement = document.querySelector(targetId);
-  
-        const headerHeight = document.querySelector('header').offsetHeight;
-  
-        window.scrollTo({
-          top: targetElement.offsetTop - headerHeight,
-          behavior: "smooth"
-        });
-      }
-  
-      headerLinks.forEach(link => {
-        link.addEventListener("click", smoothScroll);
-      });
-  
-      aboutLinks.forEach(link => {
-        link.addEventListener("click", smoothScroll);
+    document.addEventListener('DOMContentLoaded', function () {
+  var links = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (event) {
+      event.preventDefault();
+      var targetId = this.getAttribute('href').substring(1);
+      var targetElement = document.getElementById(targetId);
+      var headerOffset = document.querySelector('header').offsetHeight; // Get the height of the fixed header
+      var elementPosition = targetElement.getBoundingClientRect().top;
+      var offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
     });
+  }
+});
   </script>
 
   <div class="container">
