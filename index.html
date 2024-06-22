@@ -495,6 +495,26 @@ header .header-name {
   width: 100%;
   line-height: 0.8; /* Adjust the line height to reduce the height of the copyright banner */
 }
+.copyright div {
+  max-width: 1200px;
+  background-color: transparent;
+  padding-top: 0;
+  margin: 0 auto;
+}
+.d-flex { 
+  display: flex;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.d-column {
+  flex-flow: column;
+}
+.d-md-row {
+  @media (min-width: 680px) {
+    flex-flow: row;
+  }
+}
 
   </style>
 
@@ -784,7 +804,10 @@ header .header-name {
 
   <!-- Copyright Section -->
   <div class="copyright">
-    <p>Copyright &copy; David Aguilar Lleyda, 2024. All rights reserved.</p>
+    <div class=" d-flex justify-content-between d-column d-md-row">
+      <p>Copyright &copy; David Aguilar Lleyda, 2024.</p>
+      <p>All rights reserved.</p>
+    </div>
   </div>
 
   
