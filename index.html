@@ -394,7 +394,7 @@ header .header-name {
   .project-filter-button {
     background-color: black;
     color: white;
-    font-size: 1em; /* Set font size to match body text */
+    /* font-size: 1em; */
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -403,8 +403,8 @@ header .header-name {
     margin: 5px;
     transition: background-color 0.3s;
     display: flex;
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
+    align-items: center;
+    justify-content: center;
     border-radius: 8px;
   }
 
@@ -414,72 +414,69 @@ header .header-name {
 
   .project-buttons {
     display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
-    justify-content: center; /* Center the buttons horizontally */
-    margin-top: 5px; /* Add margin between rows, make sure it's the same as the margin for project-filter-button */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
   }
 
   .projects-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Adjusted flex-wrap */
-    justify-content: center; /* Center the entire row horizontally */
-    margin: 0 -10px;
+    flex-direction: column; /* Stack projects vertically */
+    align-items: center;
+    width: 100%;
+    margin-top: 20px; /* Add some space before the first project */
+  }
+
+  .projects-wrapper::before {
+    content: '';
+    width: 80%; /* Matches the width of project containers */
+    border-top: 2px solid black;
+    display: block;
+    margin-bottom: 20px; /* Add space before the first project */
+  }
+
+  .projects-wrapper .project {
+    padding-top: 10px; /* Reduced top padding */
+    padding-bottom: 20px; /* Ensure bottom padding is the same */
+    border-bottom: 2px solid black;
+    margin-bottom: 10px; /* Add some space between projects */
   }
 
   .project {
-    position: relative;
-    margin: 10px;
-    overflow: hidden;
-    width: calc(33.33% - 20px);
-    max-width: 350px;
-    height: 200px;
-    border-radius: 8px;
-    justify-content: flex-start; /* Projects stack from left to right */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%; /* Set the project container width */
+    padding-bottom: 20px;
   }
 
   .project img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fit the image within the container, covering the entire space */
-    object-position: center; /* Center the image */
-}
-
-  .project:hover .project-image {
-    filter: brightness(70%);
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover; /* Ensure image covers the area, cropping if necessary */
+    margin-right: 20px; /* Add space between the image and text */
   }
 
-  .project-details {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0px 0px;
-    opacity: 0;
-    transition: background-color 0.3s, opacity 0.3s;
-    z-index: 1;
+  .project-content {
+    text-align: left;
+    flex-grow: 1;
   }
 
-  .project-details h3,
-  .project-details p {
-    margin: 0;
-  }
-
-  .project-details p {
-    font-size: 16px;
-    margin-bottom: 10px;
+  .project-title {
+    font-family: "Marcellus", serif;
     font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
   }
 
-  .project-description-text {
-    padding: 0 10px; /* horizontal padding */
+  .project-description {
+    margin: 0 0 10px 0;
+  }
+
+  .project-keywords {
+    font-style: italic;
+    margin: 0 0 10px 0;
   }
 
   .project-button {
@@ -488,13 +485,8 @@ header .header-name {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    font-size: 12px;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 8px;
-  }
-
-  .project:hover .project-details {
-    opacity: 1;
   }
 
   .project-button:hover {
@@ -504,16 +496,21 @@ header .header-name {
 
   @media (max-width: 768px) {
     .project {
-      width: calc(50% - 20px);
+      flex-direction: column; /* Stack image and content vertically */
+      align-items: center;
     }
-  }
 
-  @media (max-width: 480px) {
-    .project {
-      width: calc(100% - 20px);
+    .project img {
+      margin-bottom: 10px;
+      margin-right: 0; /* Reset right margin for narrow screens */
+    }
+
+    .project-content {
+      text-align: center;
     }
   }
 </style>
+
 
   <!-- Contact Section Styles -->
   <style>
@@ -740,7 +737,7 @@ header .header-name {
 
     </section>
 
-   <!-- Projects Section -->
+<!-- Projects Section -->
 <section id="projects">
   <div class="section-image">
     <img src="./images/section_icon_projects.png" alt="Projects Icon" width="100" height="100">
@@ -767,60 +764,103 @@ header .header-name {
     <button class="project-filter-button" onclick="filterProjects('r')">R</button>
     <button class="project-filter-button" onclick="filterProjects('tableau')">Tableau</button>
   </div>
-  <div class="projects-wrapper">
+  <div class="projects-wrapper" style="margin-top: 40px;">
     <div class="project" data-keywords="data_analysis,python">
-      <img src="./images/pic_household_size_and_income.png" alt="Project 1" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">A study of household size and income in the city of Barcelona</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
+      <img src="./images/pic_household_size_and_income.png" alt="Project 1">
+      <div class="project-content">
+        <div class="project-title">A study of household size and income in the city of Barcelona</div>
+        <div class="project-description">Using data from Barcelona, we examined the relationship between the number of people living in a 
+          household and income, revealing a U-shaped pattern. 
+          Both lower- and higher-income individuals tend to live in households with more people, 
+          while middle-income individuals typically inhabit households with fewer members. 
+          Our results support the idea that wealth and household sizes do not follow a monotonic relationship.</div>
+        <div class="project-keywords">Keywords: Data analysis, Python</div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/household_size_and_income/blob/main/household_size_and_income.ipynb', '_blank')">See project</button>
       </div>
     </div>
+
     <div class="project" data-keywords="data_analysis,python">
-      <img src="./images/pic_names_and_ethnicities.png" alt="Project 2" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">An exploration of ethnicity and baby naming trends in New York City</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data analysis, Python</span></p>
+      <img src="./images/pic_names_and_ethnicities.png" alt="Project 2">
+      <div class="project-content">
+        <div class="project-title">An exploration of ethnicity and baby naming trends in New York City</div>
+        <div class="project-description">Names given to babies in New York City from 2011 to 2019 were studied. 
+          We focused on the differences across four ethnic groups: Asian-Pacific Islander, Black, Hispanic, and White. 
+          By introducing a measure of naming overlap based on cosine similarity, 
+          the project highlights which communities share similar naming conventions and which have distinct preferences, as well as 
+          how naming trends evolved throughout the 2010s.</div>
+        <div class="project-keywords">Keywords: Data analysis, Python</div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/names_and_ethnicities/blob/main/names_and_ethnicities.ipynb', '_blank')">See project</button>
       </div>
     </div>
+
     <div class="project" data-keywords="data_visualization,tableau">
-      <img src="./images/pic_erc_dashboard.png" alt="Project 3" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">Dashboard of European academic funding</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
+      <img src="./images/pic_erc_dashboard.png" alt="Project 3">
+      <div class="project-content">
+        <div class="project-title">Dashboard of European academic funding</div>
+        <div class="project-description">This dashboard presents the extent to which, from 2007 to 2022, different European countries 
+          and metropolitan areas have benefitted from the grants awarded by the European Research Council, 
+          the main academic research funding body of the European Union. Data is presented in absolute terms and per capita, 
+          and we compute a Gini coefficient to reveal the extent to which grants awarded within a country are monopolized by just a few cities.
+        </div>
+        <div class="project-keywords">Keywords: Data visualization, Tableau</div>
         <button class="project-button" onclick="window.open('https://public.tableau.com/views/ERCgrantsdashboard/Dashboard_ERC?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
       </div>
     </div>
+
     <div class="project" data-keywords="data_visualization,tableau">
-      <img src="./images/pic_tokyo_metro_viz.png" alt="Project 4" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">Visualization of Greater Tokyo figures</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Data visualization, Tableau</span></p>
+      <img src="./images/pic_tokyo_metro_viz.png" alt="Project 4">
+      <div class="project-content">
+        <div class="project-title">Visualization of Greater Tokyo figures</div>
+        <div class="project-description">We often fail to grasp the sheer numbers of Greater Tokyo, 
+          the most populous metropolitan area in the world. This visualization presents three Voronoi diagrams that equate the 
+          surface, population and GDP of Greater Tokyo to the combined metrics of numerous sovereign states.
+        </div>
+        <div class="project-keywords">Keywords: Data visualization, Tableau</div>
         <button class="project-button" onclick="window.open('https://public.tableau.com/views/GreaterTokyoAreafigures/Visualization?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
       </div>
     </div>
+
     <div class="project" data-keywords="simulations,r">
-      <img src="./images/pic_hotstove.png" alt="Project 5" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">Exploration-exploitation choices and the hot stove effect: a simulation-based approach</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Simulations, R</span></p>
+      <img src="./images/pic_hotstove.png" alt="Project 5">
+      <div class="project-content">
+        <div class="project-title">Exploration-exploitation choices and the hot stove effect: a simulation-based approach</div>
+        <div class="project-description">We simulated decision-making agents choosing between two alternatives while balancing 
+          exploitation and exploration in order to maximize reward. 
+          By varying the temperature parameter in a softmax algorithm, 
+          the agents show differing rates of selecting the most rewarding alternative. 
+          The research highlights how the algorithm naturally gives way to the hot stove effect, 
+          where initial negative outcomes lead to avoiding further choices of an alternative, causing the underestimation of it value.</div>
+        <div class="project-keywords">Keywords: Simulations, R</div>
         <button class="project-button" onclick="window.open('https://github.com/aguilarlleyda/hot_stove_sims/blob/7333928a1832fc2c2e1650ac3fc90e1fab0e2018/hot_stove_sims.md', '_blank')">See project</button>
       </div>
     </div>
+
     <div class="project" data-keywords="machine_learning,python">
-      <img src="./images/pic_budget_expenditure.png" alt="Project 6" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">Relating country differences in budget expenditure to socio-economic indicators</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Machine learning, Python</span></p>
+      <img src="./images/pic_budget_expenditure.png" alt="Project 6">
+      <div class="project-content">
+        <div class="project-title">Relating country differences in budget expenditure to socio-economic indicators</div>
+        <div class="project-description">Machine learning techniques were used to relate the way countries 
+          spend their budget to socio-economic indicators. 
+          Initial k-means clustering did not reveal meaningful country groupings, 
+          but Principal Component Analysis (PCA) identified different trends, 
+          such as the correlation between higher spending on health and social protection and lower spending on bureaucratic services. 
+          Our main principal component was strongly linked to the Human Development Index (HDI) and moderately correlated 
+          with the proportion of public employees in the workforce.</div>
+        <div class="project-keywords">Keywords: Machine learning, Python</div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/budget_expenditure/blob/main/budget_expenditure.ipynb', '_blank')">See project</button>
       </div>
     </div>
+
     <div class="project" data-keywords="machine_learning,python">
-      <img src="./images/pic_wine_quality.png" alt="Project 7" class="project-image">
-      <div class="project-details">
-        <p class="project-description-text">Predicting a wine's quality from its physicochemical properties</p>
-        <p><span style="font-style: normal;">Keywords:</span> <span style="font-style: italic;">Machine learning, Python</span></p>
+      <img src="./images/pic_wine_quality.png" alt="Project 7">
+      <div class="project-content">
+        <div class="project-title">Predicting a wine's quality from its physicochemical properties</div>
+        <div class="project-description">Machine learning models were used to predict wine quality based on physicochemical properties from 
+          Portuguese vinho verde wines. Each model's performance was optimized via hyperparameter tuning through grid search and cross-validation. 
+          Among various models, including linear and tree-based approaches, 
+          a random forest model demonstrated the best performance. Key predictors of higher quality ratings included higher alcohol content, 
+          lower density, and reduced volatile acidity.</div>
+        <div class="project-keywords">Keywords: Machine learning, Python</div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/wine_quality/blob/main/wine_quality.ipynb', '_blank')">See project</button>
       </div>
     </div>
@@ -833,7 +873,7 @@ header .header-name {
       projects.forEach(project => {
         const keywords = project.dataset.keywords.split(',');
         if (keywords.includes(tag) || tag === 'all') {
-          project.style.display = 'block';
+          project.style.display = 'flex';
         } else {
           project.style.display = 'none';
         }
