@@ -32,14 +32,13 @@
         padding-top: 80px;
         padding-bottom: 0px;
         margin-top: 30px;
-        background-color: #FFFFFF;
+        background-color: white;
         border-radius: 8px;
         text-align: center;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box; /* Include padding and border in the element's total width */
-        background-color: white;
     }
 
 
@@ -255,11 +254,6 @@ header .header-name {
     }
   </style>
 
-  
-  
-  
-  
-
   <!-- Resume Section Styles -->
   <style>
     .resume-info {
@@ -300,7 +294,69 @@ header .header-name {
 
   </style>
 
-  <!-- Skills Section Styles -->
+<!-- Experience subsection Styles -->
+<style>
+  .experience-section {
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 20px; 
+  }
+
+  .experience-wide-table {  /* if wide screen, then table format */
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+  }
+
+  .experience-wide-table th,
+  .experience-wide-table td {
+    text-align: center;
+    padding: 16px; 
+    border-bottom: 2px solid #000;
+  }
+
+  .experience-narrow-list { /* if narrow screen, then list format */
+    display: none;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .experience-narrow-entry {
+    margin: 0;
+    text-align: left;
+    border-bottom: 2px solid #000;
+    padding: 16px 0;
+  }
+
+  .experience-narrow-entry:first-child {
+    border-top: 2px solid #000; /* extra line at the top of the first item */
+    margin-top: 0;
+  }
+
+  .experience-narrow-entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .experience-narrow-entry strong {
+    font-weight: bold;
+  }
+
+  @media (max-width: 680px) {
+    .experience-wide-table {
+      display: none; /* if narrow screen, hide table */
+    }
+
+    .experience-narrow-list {
+      display: block; /* if narrow screen, show list */
+    }
+  }
+</style>
+
+
+
+  <!-- Skills Subsection Styles -->
   <style>
     .skills-section {
      padding: 0px 30px 30px;
@@ -591,40 +647,69 @@ header .header-name {
       </p>
     </div>
 
-<!-- Experience Section -->
-<div class="resume-subheader">Experience</div>
-<div class="resume-info" style="margin-bottom: 55px; overflow-x: auto;">
-  <table style="width: 80%; border-collapse: collapse; border-bottom: 2px solid black;">
-    <!-- Table Header -->
-    <tr>
-      <th style="min-width: 100px; text-align: center; padding: 8px;">Years</th>
-      <th style="min-width: 150px; text-align: center; padding: 8px;">Role</th>
-      <th style="min-width: 200px; text-align: center; padding: 8px;">Institution</th>
-      <th style="min-width: 150px; text-align: center; padding: 8px;">Location</th>
-    </tr>
-    <!-- Entry 1 -->
-    <tr>
-      <td class="resume-cell">2020 - 2024</td>
-      <td class="resume-cell">Research scientist</td>
-      <td class="resume-cell">RIKEN Center for Brain Science</td>
-      <td class="resume-cell">Wako, Japan</td>
-    </tr>
-    <!-- Entry 2 -->
-    <tr>
-      <td class="resume-cell">2018 - 2020</td>
-      <td class="resume-cell">Postdoctoral researcher</td>
-      <td class="resume-cell">French National Centre for Scientific Research</td>
-      <td class="resume-cell">Paris, France</td>
-    </tr>
-    <!-- Entry 3 -->
-    <tr>
-      <td class="resume-cell">2011 - 2017</td>
-      <td class="resume-cell">Doctoral candidate</td>
-      <td class="resume-cell">University of Barcelona</td>
-      <td class="resume-cell">Barcelona, Catalonia</td>
-    </tr>
-  </table>
-</div>
+  <!-- Experience Section -->
+  <div class="resume-subheader">Experience</div>
+  <div class="experience-section">
+
+    <!-- Table for wide screens -->
+    <table class="experience-wide-table">
+      <!-- Table Header -->
+      <tr>
+        <th>Years</th>
+        <th>Role</th>
+        <th>Institution</th>
+        <th>Location</th>
+      </tr>
+      <!-- Entry 1 -->
+      <tr>
+        <td class="resume-cell">2020 - 2024</td>
+        <td class="resume-cell">Research scientist</td>
+        <td class="resume-cell">RIKEN Center for Brain Science</td>
+        <td class="resume-cell">Wako, Japan</td>
+      </tr>
+      <!-- Entry 2 -->
+      <tr>
+        <td class="resume-cell">2018 - 2020</td>
+        <td class="resume-cell">Postdoctoral researcher</td>
+        <td class="resume-cell">French National Centre for Scientific Research</td>
+        <td class="resume-cell">Paris, France</td>
+      </tr>
+      <!-- Entry 3 -->
+      <tr>
+        <td class="resume-cell">2011 - 2017</td>
+        <td class="resume-cell">Doctoral candidate</td>
+        <td class="resume-cell">University of Barcelona</td>
+        <td class="resume-cell">Barcelona, Catalonia</td>
+      </tr>
+    </table>
+
+    <!-- List format for narrow screens -->
+    <div class="experience-narrow-list">
+      <!-- Entry 1 -->
+      <div class="experience-narrow-entry">
+        <strong>Years:</strong> 2020 - 2024<br>
+        <strong>Role:</strong> Research scientist<br>
+        <strong>Institution:</strong> RIKEN Center for Brain Science<br>
+        <strong>Location:</strong> Wako, Japan
+      </div>
+      <!-- Entry 2 -->
+      <div class="experience-narrow-entry">
+        <strong>Years:</strong> 2018 - 2020<br>
+        <strong>Role:</strong> Postdoctoral researcher<br>
+        <strong>Institution:</strong> French National Centre for Scientific Research<br>
+        <strong>Location:</strong> Paris, France
+      </div>
+      <!-- Entry 3 -->
+      <div class="experience-narrow-entry">
+        <strong>Years:</strong> 2011 - 2017<br>
+        <strong>Role:</strong> Doctoral candidate<br>
+        <strong>Institution:</strong> University of Barcelona<br>
+        <strong>Location:</strong> Barcelona, Catalonia
+      </div>
+    </div>
+
+  </div>
+
 
 <!-- Skills Section -->
 <div class="resume-subheader">Skills</div>
