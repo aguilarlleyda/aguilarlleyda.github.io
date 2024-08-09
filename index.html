@@ -9,6 +9,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Favicon Links -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  
   <style>
     body {
       margin: 0 auto; /* Center the body horizontally */
@@ -43,9 +52,9 @@
 
 
     .section-title {
-      font-family: "Marcellus", serif;
-      font-weight: 300;
-      color: #000000;;
+      font-family: "Kanit", serif;
+      font-weight: 500;
+      color: black;
       margin-top: 0px;
       margin-bottom: 20px;
       font-size: 40px;
@@ -65,7 +74,10 @@
 }
 
     a {
-      color: #000000; /* Hyperlink */
+      color: black; /* Hyperlink */
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      
     }
 
     a:hover {
@@ -86,69 +98,72 @@
 
 <!-- Header Styles -->
 <style>
-/* Header Styles */
 header {
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 0px;
+  color: black;
+  background-color: white;
+  padding: 0 20px; /* Padding for left and right */
   text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribute space between items */
   align-items: center;
-  height: 40px; /* Adjust the height of the header */
+  height: 50px;
+  border-bottom: 1.5px solid black;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-/* Style for the header name */
+.header-logo {
+  width: 40px;
+  margin-right: 10px; /* Space between the logo and the name */
+}
+
 header .header-name {
-  font-family: "Marcellus", serif;
-  font-weight: 100;
+  font-family: "Kanit", serif;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 
 .header-sections {
   display: flex;
-  flex-wrap: wrap;
-  font-family: "Marcellus", serif;
-  font-weight: 400;
-  justify-content: flex-end; /* Center the shortcuts to the right */
-  padding-right: 20px; /* Add padding to the right */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  font-family: "Kanit", serif;
+  font-weight: 500;
+  justify-content: flex-end;
+  flex-grow: 1; /* Allow the section links to take up remaining space */
 }
 
 @media (max-width: 768px) {
   .header-sections {
-    display: none; /* Hide the section shortcuts on smaller screens */
+    display: none;
   }
 }
 
-/* Style for the header links */
 .header-link {
-  position: relative; /* Make the anchor tag relative to its container */
+  position: relative;
   display: inline-block;
   padding: 10px;
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-/* Rectangle around the hovered link */
 .header-link:hover::after {
-  content: ""; /* Required for pseudo-element */
-  position: absolute; /* Position the rectangle relative to the anchor tag */
-  top: 0; /* Align rectangle with top of header */
-  left: 0; /* Align rectangle with left of anchor tag */
-  width: 100%; /* Width of the rectangle same as the anchor tag */
-  height: 94%; /* Height of the rectangle adjusted to match header */
-  background-color: #D2042D; /* Background color of the rectangle */
-  opacity: 1; /* Adjust opacity to make the red color more prominent */
-  z-index: -1; /* Move the rectangle behind the text */
-  pointer-events: none; /* Ensure the rectangle doesn't interfere with hover events */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105%;
+  background-color: #D2042D;
+  opacity: 1;
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* Style for the text in the header links when hovered */
 .header-link:hover {
-  color: white; /* Change text color to white when hovered */
+  color: white;
 }
 
 </style>
@@ -178,9 +193,9 @@ header .header-name {
     }
 
     .name-about {
-      font-family: "Marcellus", serif;
-      font-weight: 300;
-      color: #000000;
+      font-family: "Kanit", serif;
+      font-weight: 500;
+      color: black;
       margin-top: 0px;
       margin-bottom: 20px;
       font-size: 50px;
@@ -265,11 +280,11 @@ header .header-name {
     }
 
     .resume-subheader {
-      font-family: "Marcellus", serif;
-      font-weight: 100;
+      font-family: "Kanit", serif;
+      font-weight: 500;
       font-size: 25px;
       text-align: left;
-      color: #000000;
+      color: black;
       text-align: center; 
       margin-top: 0px;
       margin-bottom: 0px;
@@ -288,7 +303,7 @@ header .header-name {
   .resume-cell {
     padding: 15px;
     text-align: center;
-    border-top: 2px solid black;
+    border-top: 1.5px solid black;
     word-wrap: break-word;
   }
 
@@ -305,7 +320,7 @@ header .header-name {
   .experience-wide-table {  /* if wide screen, then table format */
     width: 100%;
     border-collapse: collapse;
-    border-bottom: 2px solid black;
+    border-bottom: 1.5px solid black;
     margin-bottom: 30px;
   }
 
@@ -313,7 +328,7 @@ header .header-name {
   .experience-wide-table td {
     text-align: center;
     padding: 16px; 
-    border-bottom: 2px solid #000;
+    border-bottom: 1.5px solid #000;
   }
 
   .experience-narrow-list { /* if narrow screen, then list format */
@@ -326,12 +341,12 @@ header .header-name {
   .experience-narrow-entry {
     margin: 0;
     text-align: left;
-    border-bottom: 2px solid #000;
+    border-bottom: 1.5px solid #000;
     padding: 16px 0;
   }
 
   .experience-narrow-entry:first-child {
-    border-top: 2px solid #000; /* extra line at the top of the first item */
+    border-top: 1.5px solid #000; /* extra line at the top of the first item */
     margin-top: 0;
   }
 
@@ -340,7 +355,7 @@ header .header-name {
   }
 
   .experience-narrow-entry strong {
-    font-weight: bold;
+    font-weight: 500;
   }
 
   @media (max-width: 680px) {
@@ -380,8 +395,8 @@ header .header-name {
     }
 
     .skill-category p {
-      color: #000000;
-      font-weight: bold;
+      color: black;
+      font-weight: 500;
     }
   </style>
 
@@ -394,7 +409,7 @@ header .header-name {
   .project-filter-button {
     background-color: black;
     color: white;
-    /* font-size: 1em; */
+    font-size: 1em;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -430,7 +445,7 @@ header .header-name {
   .projects-wrapper::before {
     content: '';
     width: 80%; /* Matches the width of project containers */
-    border-top: 2px solid black;
+    border-top: 1.5px solid black;
     display: block;
     margin-bottom: 20px; /* Add space before the first project */
   }
@@ -438,34 +453,35 @@ header .header-name {
   .projects-wrapper .project {
     padding-top: 10px; /* Reduced top padding */
     padding-bottom: 20px; /* Ensure bottom padding is the same */
-    border-bottom: 2px solid black;
+    border-bottom: 1.5px solid black;
     margin-bottom: 10px; /* Add some space between projects */
   }
 
   .project {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; /* Align items vertically centered */
     width: 80%; /* Set the project container width */
     padding-bottom: 20px;
   }
 
   .project img {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     height: 200px;
     object-fit: cover; /* Ensure image covers the area, cropping if necessary */
     margin-right: 20px; /* Add space between the image and text */
+    flex-shrink: 0; /* Prevent the image from shrinking */
   }
 
   .project-content {
     text-align: left;
     flex-grow: 1;
+    margin: 0; /* Ensure no extra margin */
   }
 
   .project-title {
-    font-family: "Marcellus", serif;
-    font-weight: bold;
+    font-family: "Kanit", serif;
+    font-weight: 500;
     font-size: 1.2em;
     margin: 0 0 10px 0;
   }
@@ -475,9 +491,16 @@ header .header-name {
   }
 
   .project-keywords {
-    font-style: italic;
-    margin: 0 0 10px 0;
-  }
+  margin: 0 0 10px 0;
+}
+
+.keywords-label {
+  font-weight: inherit;
+}
+
+.keywords-text {
+  font-style: italic;
+}
 
   .project-button {
     background-color: black;
@@ -487,6 +510,7 @@ header .header-name {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 8px;
+    font-size: 1em;
   }
 
   .project-button:hover {
@@ -512,6 +536,7 @@ header .header-name {
 </style>
 
 
+
   <!-- Contact Section Styles -->
   <style>
     .contact-form {
@@ -520,11 +545,11 @@ header .header-name {
     }
 
     .resume-entry p span {
-      color: #000000;
+      color: black;
     }
 
     .resume-entry p strong {
-      font-weight: bold;
+      font-weight: 500;
     }
 
     .contact-form input::placeholder,
@@ -537,8 +562,8 @@ header .header-name {
   <!-- Copyright Section Styles -->
   <style>
 .copyright {
-  background-color: #000000;
-  color: #FFFFFF;
+  color: black;
+  background-color: white;
   padding: 1px 0;
   text-align: center;
   margin-top: 20px;
@@ -547,6 +572,7 @@ header .header-name {
   bottom: 0;
   width: 100%;
   line-height: 0.8; /* Adjust the line height to reduce the height of the copyright banner */
+  border-top: 1.5px solid black;
 }
 
   </style>
@@ -556,8 +582,9 @@ header .header-name {
 <body>
 
   <header id="mainHeader">
-    <span class="header-name" style="flex: 1;">David Aguilar Lleyda</span>
-    <div class="header-sections" style="flex: 1;">
+    <img src="images/logo.png" alt="Logo" class="header-logo">
+    <span class="header-name">DAVID AGUILAR LLEYDA</span>
+    <div class="header-sections">
       <a href="#about" class="header-link">ABOUT</a>
       <a href="#resume" class="header-link">RÉSUMÉ</a>
       <a href="#projects" class="header-link">PROJECTS</a>
@@ -597,7 +624,7 @@ header .header-name {
       <div class="about-content">
         <img src="./images/about_pic.png" alt="About pic" width="200" height="200" id="aboutpic">
         <div class="about-text">
-          <div class="name-about">David Aguilar Lleyda, PhD</div>
+          <div class="name-about">DAVID AGUILAR LLEYDA, PhD</div>
           <p>Welcome to my website! My name is David, and I'm a data scientist.
             Before that I was a researcher in cognitive science for more than 10 years. I formed part of three
             different academic institutions in as many countries, and I <a
@@ -711,7 +738,7 @@ header .header-name {
 <!-- Skills Section -->
 <div class="resume-subheader">Skills</div>
 <div class="resume-info" style="margin-bottom: 5px; overflow-x: auto;">
-  <table class="skills-table" style="width: 80%; border-collapse: collapse; border-bottom: 2px solid black; margin: 0 auto;">
+  <table class="skills-table" style="width: 80%; border-collapse: collapse; border-bottom: 1.5px solid black; margin: 0 auto;">
     <!-- Skill Category 1 -->
     <tr>
       <td class="resume-cell" style="text-align: left;"><strong style="padding-right: 20px;">General skills:</strong> Machine learning, data analysis, statistics, data visualization, cognitive science</td>
@@ -774,7 +801,10 @@ header .header-name {
           Both lower- and higher-income individuals tend to live in households with more people, 
           while middle-income individuals typically inhabit households with fewer members. 
           Our results support the idea that wealth and household sizes do not follow a monotonic relationship.</div>
-        <div class="project-keywords">Keywords: Data analysis, Python</div>
+        <div class="project-keywords">
+          <span class="keywords-label">Keywords:</span> 
+          <span class="keywords-text">Data analysis, Python</span>
+        </div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/household_size_and_income/blob/main/household_size_and_income.ipynb', '_blank')">See project</button>
       </div>
     </div>
@@ -784,11 +814,14 @@ header .header-name {
       <div class="project-content">
         <div class="project-title">An exploration of ethnicity and baby naming trends in New York City</div>
         <div class="project-description">Names given to babies in New York City from 2011 to 2019 were studied. 
-          We focused on the differences across four ethnic groups: Asian-Pacific Islander, Black, Hispanic, and White. 
+          We focused on the differences across four ethnic groups: Asian-Pacific Islander, Black, Hispanic, and white. 
           By introducing a measure of naming overlap based on cosine similarity, 
           the project highlights which communities share similar naming conventions and which have distinct preferences, as well as 
           how naming trends evolved throughout the 2010s.</div>
-        <div class="project-keywords">Keywords: Data analysis, Python</div>
+          <div class="project-keywords">
+            <span class="keywords-label">Keywords:</span> 
+            <span class="keywords-text">Data analysis, Python</span>
+          </div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/names_and_ethnicities/blob/main/names_and_ethnicities.ipynb', '_blank')">See project</button>
       </div>
     </div>
@@ -802,7 +835,10 @@ header .header-name {
           the main academic research funding body of the European Union. Data is presented in absolute terms and per capita, 
           and we compute a Gini coefficient to reveal the extent to which grants awarded within a country are monopolized by just a few cities.
         </div>
-        <div class="project-keywords">Keywords: Data visualization, Tableau</div>
+        <div class="project-keywords">
+          <span class="keywords-label">Keywords:</span> 
+          <span class="keywords-text">Data visualization, Tableau</span>
+        </div>
         <button class="project-button" onclick="window.open('https://public.tableau.com/views/ERCgrantsdashboard/Dashboard_ERC?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
       </div>
     </div>
@@ -815,7 +851,10 @@ header .header-name {
           the most populous metropolitan area in the world. This visualization presents three Voronoi diagrams that equate the 
           surface, population and GDP of Greater Tokyo to the combined metrics of numerous sovereign states.
         </div>
-        <div class="project-keywords">Keywords: Data visualization, Tableau</div>
+        <div class="project-keywords">
+          <span class="keywords-label">Keywords:</span> 
+          <span class="keywords-text">Data visualization, Tableau</span>
+        </div>
         <button class="project-button" onclick="window.open('https://public.tableau.com/views/GreaterTokyoAreafigures/Visualization?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link', '_blank')">See project</button>
       </div>
     </div>
@@ -830,7 +869,10 @@ header .header-name {
           the agents show differing rates of selecting the most rewarding alternative. 
           The research highlights how the algorithm naturally gives way to the hot stove effect, 
           where initial negative outcomes lead to avoiding further choices of an alternative, causing the underestimation of it value.</div>
-        <div class="project-keywords">Keywords: Simulations, R</div>
+        <div class="project-keywords">
+          <span class="keywords-label">Keywords:</span> 
+          <span class="keywords-text">Simulations, R</span>
+        </div>
         <button class="project-button" onclick="window.open('https://github.com/aguilarlleyda/hot_stove_sims/blob/7333928a1832fc2c2e1650ac3fc90e1fab0e2018/hot_stove_sims.md', '_blank')">See project</button>
       </div>
     </div>
@@ -846,7 +888,10 @@ header .header-name {
           such as the correlation between higher spending on health and social protection and lower spending on bureaucratic services. 
           Our main principal component was strongly linked to the Human Development Index (HDI) and moderately correlated 
           with the proportion of public employees in the workforce.</div>
-        <div class="project-keywords">Keywords: Machine learning, Python</div>
+        <div class="project-keywords">
+          <span class="keywords-label">Keywords:</span> 
+          <span class="keywords-text">Machine learning, Python</span>
+        </div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/budget_expenditure/blob/main/budget_expenditure.ipynb', '_blank')">See project</button>
       </div>
     </div>
@@ -860,7 +905,10 @@ header .header-name {
           Among various models, including linear and tree-based approaches, 
           a random forest model demonstrated the best performance. Key predictors of higher quality ratings included higher alcohol content, 
           lower density, and reduced volatile acidity.</div>
-        <div class="project-keywords">Keywords: Machine learning, Python</div>
+          <div class="project-keywords">
+            <span class="keywords-label">Keywords:</span> 
+            <span class="keywords-text">Machine learning, Python</span>
+          </div>
         <button class="project-button" onclick="window.open('https://nbviewer.org/github/aguilarlleyda/wine_quality/blob/main/wine_quality.ipynb', '_blank')">See project</button>
       </div>
     </div>
