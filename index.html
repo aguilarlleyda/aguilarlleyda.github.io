@@ -6,25 +6,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Aguilar Lleyda</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <!-- Favicon Links -->
-  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
   <style>
     body {
-      margin: 0 auto; /* Center the body horizontally */
-      font-family: 'Inter', sans-serif;  /* font-family: 'Nunito Sans', sans-serif; */
+      margin: 0 auto; /* center body horizontally */
+      font-family: 'Inter', sans-serif; 
       font-weight: 400;
       line-height: 1.6; /* spacing inbetween lines */
-      background-color: white;
+      background-color: floralwhite;
     }
 
     .container {
@@ -41,18 +35,18 @@
         padding-top: 80px;
         padding-bottom: 0px;
         margin-top: 30px;
-        background-color: white;
+        background-color: floralwhite;
         border-radius: 8px;
         text-align: center;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        box-sizing: border-box; /* Include padding and border in the element's total width */
+        box-sizing: border-box; /* include padding and border in the element's total width */
     }
 
 
     .section-title {
-      font-family: "Kanit", serif;
+      font-family: "Bitter", serif;
       font-weight: 500;
       color: black;
       margin-top: 0px;
@@ -68,20 +62,20 @@
 
     @media (max-width: 768px) {
   .section-intro {
-    max-width: 80%; /* Reduce the max-width to allow more space for text */
-    padding: 0 20px; /* Reduce horizontal padding for narrow screens */
+    max-width: 80%; /* eeduce max-width to allow more space for text */
+    padding: 0 20px; /* reduce horizontal padding */
   }
 }
 
     a {
-      color: black; /* Hyperlink */
+      color: black; /* hyperlink */
       text-decoration: underline;
       text-decoration-thickness: 1.5px;
       
     }
 
     a:hover {
-      color: #D2042D; /* Hyperlink hover */
+      color: #D54613; /* hyperlink hover */ /* #D2042D */
     }
 
     .section-image {
@@ -100,39 +94,46 @@
 <style>
 header {
   color: black;
-  background-color: white;
-  padding: 0 20px; /* Padding for left and right */
+  background-color: floralwhite;
+  padding: 0 20px; /* padding for left and right */
   text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Distribute space between items */
+  justify-content: space-between; /* distribute space between items */
   align-items: center;
   height: 50px;
   border-bottom: 1.5px solid black;
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  box-sizing: border-box; /* include padding and border in element's total width and height */
+  /*opacity code starts*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.80;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  /*opacity code ends*/
 }
 
 .header-logo {
   width: 40px;
-  margin-right: 10px; /* Space between the logo and the name */
+  margin-right: 10px; /* space between logo and name */
 }
 
 header .header-name {
-  font-family: "Kanit", serif;
+  font-family: "Bitter", serif;
   font-size: 1.4em;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .header-sections {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping */
-  font-family: "Kanit", serif;
+  flex-wrap: nowrap; /* prevent wrapping */
+  font-family: "Bitter", serif;
   font-weight: 500;
   justify-content: flex-end;
-  flex-grow: 1; /* Allow the section links to take up remaining space */
+  flex-grow: 1; /* allow section links to take up remaining space */
 }
 
 @media (max-width: 768px) {
@@ -156,44 +157,103 @@ header .header-name {
   left: 0;
   width: 100%;
   height: 105%;
-  background-color: #D2042D;
+  background-color: #D54613;
   opacity: 1;
   z-index: -1;
   pointer-events: none;
 }
 
 .header-link:hover {
-  color: white;
+  color: floralwhite;
 }
 
 </style>
 
+<!-- Welcome section Styles -->
+
+<style>
+#welcome-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0px;
+  padding-top: 50px; /* same as header height */
+}
+
+.welcome-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-image {
+  width: 80%;
+  height: auto; /* maintain aspect ratio */
+  object-fit: contain; /* image covers section */
+  display: block;
+  margin-top: 0px;
+}
+
+.welcome-text {
+  position: absolute;
+  color: black;
+  font-family: "Bitter", serif;
+  font-weight: 500;
+  font-size: 50px;
+  text-align: center;
+  z-index: 10; /* text above image */
+}
+
+@media (max-width: 900px) {
+  .welcome-text {
+    font-size: 40px; /* smaller font size */
+  }
+
+  .welcome-image {
+  width: 90%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 30px; /* smaller font size */
+  }
+
+  .welcome-image {
+  width: 100%;
+  }
+}
+
+</style>
 
   <!-- About Section Styles -->
   <style>
     #about {
-      padding-top: 80px; /* Adjust the value to create space between the header and About section */
+      padding-top: 80px;
     }
 
     .about-content {
       display: flex;
-      align-items: flex-start; /* Align items to the start of the container vertically */
-      justify-content: center; /* Center horizontally */
-      flex-direction: row; /* Place image and text side by side */
+      align-items: flex-start; /* align items to start of container vertically */
+      justify-content: center; /* center horizontally */
+      flex-direction: row; /* place image and text side by side */
       max-width: 100%;
-      margin: 0 auto; /* Center horizontally */
+      margin: 0 auto; /* center horizontally */
     }
 
     .about-text {
       max-width: 60%;
       text-align: justify;
       position: relative;
-      margin-left: 40px; /* Add margin between image and text */
-      margin-top: 20px; /* Add margin on top */
+      margin-left: 40px; /* add margin between image and text */
+      margin-top: 20px; /* add margin on top */
     }
 
     .name-about {
-      font-family: "Kanit", serif;
+      font-family: "Bitter", serif;
       font-weight: 500;
       color: black;
       margin-top: 0px;
@@ -203,21 +263,16 @@ header .header-name {
 
     @media (max-width: 768px) {
       .name-about {
-        font-size: 30px; /* Reduce font size for narrow screens */
-        text-align: center; /* Center the text */
+        font-size: 30px; /* reduce font size */
+        text-align: center; /* center text */
       }
     }
 
     .about-image {
       max-width: 200px;
       height: auto;
-      border-radius: 8px;
-      transition: transform 0.3s;
-      margin-right: 40px; /* Add space between image and text on its right */
-    }
-
-    .about-image:hover {
-      transform: scale(1.1); /* Scale the image on hover */
+      border-radius: 50%; /* make border round */
+      border: 1.5px solid black;
     }
 
     .icons-socials {
@@ -246,25 +301,24 @@ header .header-name {
       content: url('./images/icon_linkedin_hover.png');
     }
 
-    /* Adjust layout for narrow screens */
     @media (max-width: 768px) {
       .about-content {
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column; /* change flex direction to stack items vertically */
+        align-items: center; /* center items horizontally */
       }
 
       .about-text {
-        max-width: 80%; /* Adjust the width of the text */
-        margin-left: 0; /* Remove left margin */
-        margin-top: 20px; /* Add margin between image and text */
+        max-width: 80%;
+        margin-left: 0;
+        margin-top: 20px; /* add margin between image and text */
       }
 
       .about-image {
-        margin-right: 0; /* Remove right margin */
+        margin-right: 0;
       }
 
       .icons-socials {
-        margin-top: 20px; /* Add margin between text and icons */
+        margin-top: 20px; /* add margin between text and icons */
       }
     }
   </style>
@@ -280,7 +334,7 @@ header .header-name {
     }
 
     .resume-subheader {
-      font-family: "Kanit", serif;
+      font-family: "Bitter", serif;
       font-weight: 500;
       font-size: 25px;
       text-align: left;
@@ -408,7 +462,7 @@ header .header-name {
 
   .project-filter-button {
     background-color: black;
-    color: white;
+    color: floralwhite;
     font-size: 1em;
     padding: 10px 20px;
     border: none;
@@ -424,7 +478,7 @@ header .header-name {
   }
 
   .project-filter-button:hover {
-    background-color: #D2042D;
+    background-color: #D54613;
   }
 
   .project-buttons {
@@ -436,52 +490,54 @@ header .header-name {
 
   .projects-wrapper {
     display: flex;
-    flex-direction: column; /* Stack projects vertically */
+    flex-direction: column; /* stack projects vertically */
     align-items: center;
     width: 100%;
-    margin-top: 20px; /* Add some space before the first project */
+    margin-top: 20px; /* add some space before first project */
   }
 
   .projects-wrapper::before {
     content: '';
-    width: 80%; /* Matches the width of project containers */
+    width: 80%; /* matches width of project containers */
     border-top: 1.5px solid black;
     display: block;
-    margin-bottom: 20px; /* Add space before the first project */
+    margin-bottom: 20px; /* add space before first project */
   }
 
   .projects-wrapper .project {
-    padding-top: 10px; /* Reduced top padding */
-    padding-bottom: 20px; /* Ensure bottom padding is the same */
+    padding-top: 10px;
+    padding-bottom: 20px; /* ensure bottom padding is the same */
     border-bottom: 1.5px solid black;
-    margin-bottom: 10px; /* Add some space between projects */
+    margin-bottom: 10px; /* space between projects */
   }
 
   .project {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Align items vertically centered */
-    width: 80%; /* Set the project container width */
+    align-items: center;
+    width: 80%; /* project container width */
     padding-bottom: 20px;
   }
 
   .project img {
     width: 300px;
     height: 200px;
-    object-fit: cover; /* Ensure image covers the area, cropping if necessary */
-    margin-right: 20px; /* Add space between the image and text */
-    flex-shrink: 0; /* Prevent the image from shrinking */
+    object-fit: cover; /* image covers the area, cropping if necessary */
+    margin-right: 20px; /* space between image and text */
+    flex-shrink: 0; /* prevent image from shrinking */
+    border: 1.5px solid;
+    border-radius: 8px;
   }
 
   .project-content {
     text-align: left;
     flex-grow: 1;
-    margin: 0; /* Ensure no extra margin */
+    margin: 0;
   }
 
   .project-title {
-    font-family: "Kanit", serif;
-    font-weight: 500;
+    font-family: "Bitter", serif;
+    font-weight: 600;
     font-size: 1.2em;
     margin: 0 0 10px 0;
   }
@@ -504,7 +560,7 @@ header .header-name {
 
   .project-button {
     background-color: black;
-    color: white;
+    color: floralwhite;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -514,19 +570,19 @@ header .header-name {
   }
 
   .project-button:hover {
-    background-color: #d2042d;
-    color: white;
+    background-color: #D54613;
+    color: floralwhite;
   }
 
   @media (max-width: 768px) {
     .project {
-      flex-direction: column; /* Stack image and content vertically */
+      flex-direction: column; /* stack image and content vertically */
       align-items: center;
     }
 
     .project img {
       margin-bottom: 10px;
-      margin-right: 0; /* Reset right margin for narrow screens */
+      margin-right: 0;
     }
 
     .project-content {
@@ -537,33 +593,53 @@ header .header-name {
 
 
 
-  <!-- Contact Section Styles -->
-  <style>
-    .contact-form {
-      max-width: 300px;
-      margin: 0 auto;
-    }
+<!-- Contact Section Styles -->
+<style>
+  .contact-form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
-    .resume-entry p span {
-      color: black;
-    }
+  .contact-form input,
+  .contact-form textarea {
+    background-color: floralwhite;
+    color: black;
+    font-size: 1em;
+    font-family: inherit;
+    width: 300px;
+    padding: 10px; /* padding inside the boxes */
+    border-radius: 5px;
+    border: 1.5px solid black;
+    box-sizing: border-box; /* padding doesn't affect the width */
+  }
 
-    .resume-entry p strong {
-      font-weight: 500;
-    }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    font-size: 1em;
+    color: #9c9191;
+  }
 
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      font-size: 20px; /* font size for placeholder text on contact text boxes */
-    }
-    
-  </style>
+  .contact-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: inherit;
+    background-color: black;
+    color: floralwhite;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+
+</style>
+
 
   <!-- Copyright Section Styles -->
   <style>
 .copyright {
   color: black;
-  background-color: white;
+  background-color: floralwhite;
   padding: 1px 0;
   text-align: center;
   margin-top: 20px;
@@ -571,7 +647,7 @@ header .header-name {
   position: relative;
   bottom: 0;
   width: 100%;
-  line-height: 0.8; /* Adjust the line height to reduce the height of the copyright banner */
+  line-height: 0.8;
   border-top: 1.5px solid black;
 }
 
@@ -582,8 +658,8 @@ header .header-name {
 <body>
 
   <header id="mainHeader">
-    <img src="images/logo.png" alt="Logo" class="header-logo">
-    <span class="header-name">DAVID AGUILAR LLEYDA</span>
+     <!-- <img src="images/logo.png" alt="Logo" class="header-logo"> -->
+    <span class="header-name">David Aguilar Lleyda</span>
     <div class="header-sections">
       <a href="#about" class="header-link">ABOUT</a>
       <a href="#resume" class="header-link">RÉSUMÉ</a>
@@ -619,32 +695,42 @@ header .header-name {
   </script>
 
   <div class="container">
-    <!-- About Section -->
-    <section id="about">
-      <div class="about-content">
-        <img src="./images/about_pic.png" alt="About pic" width="200" height="200" id="aboutpic">
-        <div class="about-text">
-          <div class="name-about">DAVID AGUILAR LLEYDA, PhD</div>
-          <p>Welcome to my website! My name is David, and I'm a data scientist.
-            Before that I was a researcher in cognitive science for more than 10 years. I formed part of three
-            different academic institutions in as many countries, and I <a
-              href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">co-authored a few scientific
-              articles</a>.
-            During my time in academia I worked with data on a daily basis, developing <a href="#resume">a set of
-              skills</a> that I showcase here as <a href="#projects">a series of projects</a>. Feel free to browse
-            around, and <a href="#contact">contact me</a> if you have any question or proposal.</p>
-          <div class="icons-socials">
+
+    <!-- Welcome Section -->
+<section id="welcome-section">
+  <div class="welcome-content">
+    <img src="./images/pic_welcome.png" alt="Welcome Image" class="welcome-image">
+    <div class="welcome-text">David Aguilar Lleyda,<br>PhD</div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="about-content">
+    <img src="./images/about_pic.png" alt="About pic" width="200" height="200" id="aboutpic" class="about-image">
+    <div class="about-text">
+      <p>Welcome to my website! My name is David, and I'm a data scientist.
+        Before that I was a researcher in cognitive science for more than 10 years. I formed part of three
+        different academic institutions in as many countries, and I <a
+          href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">co-authored a few scientific
+          articles</a>.
+        During my time in academia I worked with data on a daily basis, developing <a href="#resume">a set of
+          skills</a> that I showcase here as <a href="#projects">a series of projects</a>. Feel free to browse
+        around, and <a href="#contact">contact me</a> if you have any question or proposal.</p>
+      <div class="icons-socials">
         <a href="https://github.com/aguilarlleyda" target="_blank">
           <img class="social-icon" src="./images/icon_github.png" alt="GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/aguilarlleyda/" target="_blank">
-              <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
-            </a>
-          </div>
-        </div>
+        </a>
+        <a href="https://www.linkedin.com/in/aguilarlleyda/" target="_blank">
+          <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
     
+    <!-- 
     <script>
       // JavaScript to change the image source on hover
       const aboutImage = document.getElementById("aboutpic");
@@ -657,11 +743,12 @@ header .header-name {
         this.src = "./images/about_pic.png";
       });
     </script>
+    -->
 
     <!-- Resume Section -->
     <section id="resume">
       <div class="section-image">
-        <img src="./images/section_icon_resume.png" alt="Resume Icon" width="100" height="100">
+        <img src="./images/icon_section_resume.png" alt="Resume Icon" width="100" height="100">
       </div>
       <div class="section-title">Résumé</div>
       <div class="section-intro">
@@ -767,7 +854,7 @@ header .header-name {
 <!-- Projects Section -->
 <section id="projects">
   <div class="section-image">
-    <img src="./images/section_icon_projects.png" alt="Projects Icon" width="100" height="100">
+    <img src="./images/icon_section_projects.png" alt="Projects Icon" width="100" height="100">
   </div>
   <div class="section-title">Projects</div>
   <div class="section-intro">
@@ -814,7 +901,7 @@ header .header-name {
       <div class="project-content">
         <div class="project-title">An exploration of ethnicity and baby naming trends in New York City</div>
         <div class="project-description">Names given to babies in New York City from 2011 to 2019 were studied. 
-          We focused on the differences across four ethnic groups: Asian-Pacific Islander, Black, Hispanic, and white. 
+          We focused on the differences across four ethnic groups: Asian-Pacific Islander, Black, Hispanic, and floralwhite. 
           By introducing a measure of naming overlap based on cosine similarity, 
           the project highlights which communities share similar naming conventions and which have distinct preferences, as well as 
           how naming trends evolved throughout the 2010s.</div>
@@ -934,34 +1021,33 @@ header .header-name {
 <!-- Contact Section -->
 <section id="contact">
   <div class="section-image">
-    <img src="./images/section_icon_contact.png" alt="Contact Icon" width="100" height="100">
+    <img src="./images/icon_section_contact.png" alt="Contact Icon" width="100" height="100">
   </div>
   <div class="section-title">Contact</div>
   <div class="section-intro" style="text-align: center;">
     <p>Send me a message through the form below.</p>
   </div>
-  <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST" style="max-width: 300px; margin: 0 auto;">
+  <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST" class="contact-form">
     <div style="display: flex; flex-direction: column;">
       <div style="margin-bottom: 10px; display: flex; align-items: center;">
-        <input type="text" id="name" name="name" style="flex: 1; height: 30px; font-family: inherit; font-size: inherit;" placeholder="Your name" required>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
       </div>
 
       <div style="margin-bottom: 10px; display: flex; align-items: center;">
-        <input type="email" id="email" name="email" style="flex: 1; height: 30px; font-family: inherit; font-size: inherit;" placeholder="Your email" required>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
       </div>
 
       <div style="margin-bottom: 10px; display: flex; align-items: center;">
-        <textarea id="message" name="message" style="flex: 1; height: 100px; font-family: inherit; font-size: inherit;" placeholder="Message" required></textarea>
+        <textarea id="message" name="message" placeholder="Message" required></textarea>
       </div>
 
       <div style="margin-bottom: 20px;">
-        <button type="submit" style="width: 100%; padding: 10px; font-size: inherit; background-color: black; color: white; transition: background-color 0.3s; border-radius: 10px; box-shadow: none; border: none; outline: none;">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </div>
     </div>
   </form>
 </section>
+
 
   <!-- Copyright Section -->
   <div class="copyright">
@@ -971,7 +1057,7 @@ header .header-name {
   
   <script>
     document.querySelector("#contact button").addEventListener("mouseover", function () {
-      this.style.backgroundColor = "#d2042d";
+      this.style.backgroundColor = "#D54613";
     });
   
     document.querySelector("#contact button").addEventListener("mouseout", function () {
