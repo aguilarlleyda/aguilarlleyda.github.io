@@ -108,11 +108,11 @@ header {
   border-bottom: 1.5px solid black;
   box-sizing: border-box; /* include padding and border in element's total width and height */
   /*opacity code starts*/
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=80);
   -moz-opacity: 0.80;
   -khtml-opacity: 0.8;
-  opacity: 0.8;
+  opacity: 0.8;*/
   /*opacity code ends*/
 }
 
@@ -281,24 +281,20 @@ header .header-name {
       margin-top: 15px;
     }
 
+      .icons-socials a img.social-icon {
+    transition: filter 0.3s ease-in-out;
+    max-width: 35px;
+    height: auto;
+    border-radius: 50%;
+    }
+
+    .icons-socials a:hover img.social-icon {
+      filter: brightness(0) saturate(100%) invert(37%) sepia(88%) saturate(684%) hue-rotate(349deg) brightness(92%) contrast(92%);
+    }
+
     .icons-socials a {
       margin: 0 10px;
       position: relative;
-    }
-
-    .icons-socials a:hover .social-icon {
-      content: url('./images/icon_github_hover.png');
-    }
-
-    .icons-socials a img.social-icon {
-      transition: content 0.3s ease-in-out;
-      max-width: 35px;
-      height: auto;
-      border-radius: 50%;
-    }
-
-    .icons-socials a:hover .linkedin-icon {
-      content: url('./images/icon_linkedin_hover.png');
     }
 
     @media (max-width: 768px) {
