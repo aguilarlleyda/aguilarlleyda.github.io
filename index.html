@@ -293,7 +293,7 @@ header .header-name {
 
       .icons-socials a img.social-icon {
     transition: filter 0.3s ease-in-out;
-    max-width: 35px;
+    max-width: 40px;
     height: auto;
     border-radius: 50%;
     }
@@ -751,8 +751,14 @@ header .header-name {
         <a href="https://github.com/aguilarlleyda" target="_blank">
           <img class="social-icon" src="./images/icon_github.png" alt="GitHub">
         </a>
+        <a href="https://scholar.google.com/citations?user=aEOQbloAAAAJ&hl=en" target="_blank">
+          <img class="social-icon" src="./images/icon_scholar.png" alt="Scholar">
+        </a>
         <a href="https://www.linkedin.com/in/aguilarlleyda/" target="_blank">
           <img src="./images/icon_linkedin.png" alt="Linkedin Icon" class="social-icon linkedin-icon">
+        </a>
+        <a href="https://orcid.org/0000-0001-6963-4069" target="_blank">
+          <img src="./images/icon_orcid.png" alt="Orcid Icon" class="social-icon linkedin-icon">
         </a>
       </div>
     </div>
@@ -1090,20 +1096,23 @@ header .header-name {
   <div class="section-intro" style="text-align: center;">
     <p>Send me a message through the form below.</p>
   </div>
-  <form action="https://formspree.io/aguilarlleyda@gmail.com" method="POST" class="contact-form">
+  <form action="https://formsubmit.co/aguilarlleyda@gmail.com" method="POST" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://aguilarlleyda.github.io/#contact">
+  
     <div style="display: flex; flex-direction: column;">
       <div style="margin-bottom: 10px; display: flex; align-items: center;">
         <input type="text" id="name" name="name" placeholder="Your name" required>
       </div>
-
+  
       <div style="margin-bottom: 10px; display: flex; align-items: center;">
         <input type="email" id="email" name="email" placeholder="Your email" required>
       </div>
-
+  
       <div style="margin-bottom: 10px; display: flex; align-items: center;">
         <textarea id="message" name="message" placeholder="Message" required></textarea>
       </div>
-
+  
       <div style="margin-bottom: 20px;">
         <button type="submit">Submit</button>
       </div>
